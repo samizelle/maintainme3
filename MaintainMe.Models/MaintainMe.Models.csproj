@@ -58,6 +58,8 @@
     <Compile Include="CarDetail.cs" />
     <Compile Include="CarEdit.cs" />
     <Compile Include="CarListItem.cs" />
+    <Compile Include="MaintenanceCreate.cs" />
+    <Compile Include="MaintenanceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
