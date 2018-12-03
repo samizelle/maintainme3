@@ -33,7 +33,8 @@ namespace MaintainMe.Data
         }
 
         public DbSet<Car> Cars { get; set; }
-        public DbSet<ServiceEvent> ServiceEvents {get; set;}
+        public DbSet<Maintenance> Maintenances { get; set; }
+        public DbSet<WorkOrder> WorkOrders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

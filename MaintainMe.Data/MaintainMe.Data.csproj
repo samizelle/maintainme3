@@ -65,9 +65,13 @@
     <Compile Include="Migrations\201812031815301_CarMakeCarModel.Designer.cs">
       <DependentUpon>201812031815301_CarMakeCarModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs" />
+    <Compile Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.Designer.cs">
+      <DependentUpon>201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceEvent.cs" />
+    <Compile Include="WorkOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812031815301_CarMakeCarModel.resx">
       <DependentUpon>201812031815301_CarMakeCarModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.resx">
+      <DependentUpon>201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,5 +18,7 @@ namespace MaintainMe.Data
         [MaxLength(100)]
         [Display(Name = "Maintenance Description")]
         public string MaintenanceDescription { get; set; }
+
+        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }
