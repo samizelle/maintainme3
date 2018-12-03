@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaintainMe.Data\MaintainMe.Data.csproj">
+      <Project>{571753b0-2acd-44d0-81d8-65af06187969}</Project>
+      <Name>MaintainMe.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaintainMe.Models\MaintainMe.Models.csproj">
+      <Project>{2f7030eb-c5b6-4642-b4af-658ac2c2a21d}</Project>
+      <Name>MaintainMe.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
