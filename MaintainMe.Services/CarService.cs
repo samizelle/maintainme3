@@ -90,7 +90,7 @@ namespace MaintainMe.Services
             }
         }
 
-        public bool DeleteNote(int carId)
+        public bool DeleteCar(int carId)
         {
             using (var ctx = new ApplicationDbContext())
             {

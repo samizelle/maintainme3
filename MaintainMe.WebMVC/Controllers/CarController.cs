@@ -110,11 +110,12 @@ namespace MaintainMe.WebMVC.Controllers
 
         //POST Car Delete
         [HttpPost]
+        [ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeletePost(int id)
         {
             var service = CreateCarService();
-            service.DeleteNote(id);
+            service.DeleteCar(id);
 
             TempData["SaveResult"] = "Your car was deleted";
 
