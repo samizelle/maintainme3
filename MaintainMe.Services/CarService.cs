@@ -73,5 +73,36 @@ namespace MaintainMe.Services
                     };
             }
         }
+
+        public bool UpdateCar(CarEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = 
+                    ctx
+                        .Cars
+                        .Single(e => e.CarId == model.CarId && e.OwnerId == _userId);
+
+                entity.Make = model.Make;
+                entity.Model = model.Model;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteNote(int carId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Cars
+                        .Single(e => e.CarId == carId && e.OwnerId == _userId);
+
+                ctx.Cars.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

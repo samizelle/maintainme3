@@ -48,12 +48,75 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
+        // GET Car Details
         public ActionResult Details(int id)
         {
             var svc = CreateCarService();
             var model = svc.GetCarById(id);
 
             return View(model);
+        }
+
+        // GET Car Edit
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCarService();
+            var detail = service.GetCarById(id);
+            var model =
+                new CarEdit
+                {
+                    CarId = detail.CarId,
+                    Make = detail.Make,
+                    Model = detail.Model
+                };
+            return View(model);
+        }
+
+        // POST Car Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CarEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+            
+            if(model.CarId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateCarService();
+
+            if (service.UpdateCar(model))
+            {
+                TempData["SaveResult"] = "Your car was updated";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your car was not updated");
+            return View(model);
+        }
+
+        // GET Car Delete
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCarService();
+            var model = svc.GetCarById(id);
+
+            return View(model);
+        }
+
+        //POST Car Delete
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateCarService();
+            service.DeleteNote(id);
+
+            TempData["SaveResult"] = "Your car was deleted";
+
+            return RedirectToAction("Index");
         }
 
         private CarService CreateCarService()
