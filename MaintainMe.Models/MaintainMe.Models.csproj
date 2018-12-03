@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CarCreate.cs" />
+    <Compile Include="CarDetail.cs" />
     <Compile Include="CarListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

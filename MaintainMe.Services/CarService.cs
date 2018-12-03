@@ -55,5 +55,23 @@ namespace MaintainMe.Services
                 return query.ToArray();
             }
         }
+
+        public CarDetail GetCarById(int carId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Cars
+                        .Single(e => e.CarId == carId && e.OwnerId == _userId);
+                return
+                    new CarDetail
+                    {
+                        CarId = entity.CarId,
+                        Make = entity.Make,
+                        Model = entity.Model
+                    };
+            }
+        }
     }
 }

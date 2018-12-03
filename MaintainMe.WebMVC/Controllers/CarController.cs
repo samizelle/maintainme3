@@ -48,6 +48,14 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateCarService();
+            var model = svc.GetCarById(id);
+
+            return View(model);
+        }
+
         private CarService CreateCarService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
