@@ -201,7 +201,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -281,6 +280,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaintainMe.Data\MaintainMe.Data.csproj">
+      <Project>{571753b0-2acd-44d0-81d8-65af06187969}</Project>
+      <Name>MaintainMe.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaintainMe.Models\MaintainMe.Models.csproj">
+      <Project>{2f7030eb-c5b6-4642-b4af-658ac2c2a21d}</Project>
+      <Name>MaintainMe.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MaintainMe.Services\MaintainMe.Services.csproj">
+      <Project>{958fb918-ce2d-4c2e-b5c2-79370be3323b}</Project>
+      <Name>MaintainMe.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
