@@ -9,7 +9,7 @@ namespace MaintainMe.Models
     public class CarListItem
     {
         public int CarId { get; set; }
-        public string Make { get; set; }
-        public string Model { get; set; }
+        public string CarMake { get; set; }
+        public string CarModel { get; set; }
     }
 }

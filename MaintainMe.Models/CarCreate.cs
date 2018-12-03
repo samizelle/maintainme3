@@ -12,10 +12,10 @@ namespace MaintainMe.Models
         [Required]
         [MinLength(2, ErrorMessage ="Please enter at least two characters")]
         [MaxLength(25, ErrorMessage ="Make can be no longer than 25 characters")]
-        public string Make { get; set; }
+        public string CarMake { get; set; }
         [Required]
         [MinLength(2, ErrorMessage = "Please enter at least two characters")]
         [MaxLength(25, ErrorMessage = "Model can be no longer than 25 characters")]
-        public string Model { get; set; }
+        public string CarModel { get; set; }
     }
 }

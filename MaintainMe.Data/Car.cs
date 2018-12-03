@@ -13,8 +13,8 @@ namespace MaintainMe.Data
         public int CarId { get; set; }
         public Guid OwnerId { get; set; }
         [Required]
-        public string Make { get; set; }
+        public string CarMake { get; set; }
         [Required]
-        public string Model { get; set; }
+        public string CarModel { get; set; }
     }
 }

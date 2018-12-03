@@ -23,8 +23,8 @@ namespace MaintainMe.Services
                 new Car()
                 {
                     OwnerId = _userId,
-                    Make = model.Make,
-                    Model = model.Model
+                    CarMake = model.CarMake,
+                    CarModel = model.CarModel
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -47,8 +47,8 @@ namespace MaintainMe.Services
                                 new CarListItem
                                 {
                                     CarId = e.CarId,
-                                    Make = e.Make,
-                                    Model = e.Model
+                                    CarMake = e.CarMake,
+                                    CarModel = e.CarModel
                                 }
                         );
 
@@ -68,8 +68,8 @@ namespace MaintainMe.Services
                     new CarDetail
                     {
                         CarId = entity.CarId,
-                        Make = entity.Make,
-                        Model = entity.Model
+                        CarMake = entity.CarMake,
+                        CarModel = entity.CarModel
                     };
             }
         }
@@ -83,8 +83,8 @@ namespace MaintainMe.Services
                         .Cars
                         .Single(e => e.CarId == model.CarId && e.OwnerId == _userId);
 
-                entity.Make = model.Make;
-                entity.Model = model.Model;
+                entity.CarMake = model.CarMake;
+                entity.CarModel = model.CarModel;
 
                 return ctx.SaveChanges() == 1;
             }

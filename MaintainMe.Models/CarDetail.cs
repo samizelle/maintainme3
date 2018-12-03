@@ -9,8 +9,8 @@ namespace MaintainMe.Models
     public class CarDetail
     {
         public int CarId { get; set; }
-        public string Make { get; set; }
-        public string Model { get; set; }
-        public override string ToString() => $"[{CarId}] {Make} {Model}";
+        public string CarMake { get; set; }
+        public string CarModel { get; set; }
+        public override string ToString() => $"[{CarId}] {CarMake} {CarModel}";
     }
 }

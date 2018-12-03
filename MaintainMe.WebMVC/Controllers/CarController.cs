@@ -28,6 +28,8 @@ namespace MaintainMe.WebMVC.Controllers
             return View();
         }
 
+        // This is where it breaks!!!
+
         // POST: Car Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -66,8 +68,8 @@ namespace MaintainMe.WebMVC.Controllers
                 new CarEdit
                 {
                     CarId = detail.CarId,
-                    Make = detail.Make,
-                    Model = detail.Model
+                    CarMake = detail.CarMake,
+                    CarModel = detail.CarModel
                 };
             return View(model);
         }
