@@ -13,14 +13,11 @@ namespace MaintainMe.Data
         public int WorkOrderId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
-        public int MaintId { get; set; }
         public int CarId { get; set; }
         [Required]
         public int CarMileage { get; set; }
         [Required]
         public DateTime WorkOrderDate { get; set; }
-
         public virtual Car Car { get; set; }
-        public virtual Maintenance Maintenance { get; set; }
     }
 }

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MaintainMe.Models;
 using MaintainMe.Services;
+using Microsoft.AspNet.Identity;
 
 namespace MaintainMe.WebMVC.Controllers
 {
@@ -14,8 +15,9 @@ namespace MaintainMe.WebMVC.Controllers
         // GET: Maintenance
         public ActionResult Index()
         {
-            var service = new MaintenanceService[0];
-            var model = new MaintenanceListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new MaintenanceService(userId);
+            var model = new MaintenanceListItem();
             return View(model);
         }
 
@@ -96,8 +98,8 @@ namespace MaintainMe.WebMVC.Controllers
 
         private MaintenanceService CreateMaintenanceService()
         {
-            //var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new MaintenanceService();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new MaintenanceService(userId);
             return service;
         }
     }

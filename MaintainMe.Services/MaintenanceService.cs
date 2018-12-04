@@ -10,12 +10,12 @@ namespace MaintainMe.Services
 {
     public class MaintenanceService
     {
-        /*private readonly Guid _userId;
+        private readonly Guid _userId;
 
         public MaintenanceService(Guid userId)
         {
             _userId = userId;
-        }*/
+        }
 
         public bool CreateMaintenance(MaintenanceCreate model)
         {

@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
+    <Compile Include="CarOwner.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Maintenance.cs" />
     <Compile Include="Migrations\201812030209282_InitialCreate.cs" />
