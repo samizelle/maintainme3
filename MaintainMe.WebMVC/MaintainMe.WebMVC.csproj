@@ -273,6 +273,8 @@
     <Content Include="Views\Car\Delete.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\Maintenance\Create.cshtml" />
+    <Content Include="Views\Maintenance\Details.cshtml" />
+    <Content Include="Views\Maintenance\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

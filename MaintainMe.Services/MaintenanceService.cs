@@ -10,11 +10,19 @@ namespace MaintainMe.Services
 {
     public class MaintenanceService
     {
+        /*private readonly Guid _userId;
+
+        public MaintenanceService(Guid userId)
+        {
+            _userId = userId;
+        }*/
+
         public bool CreateMaintenance(MaintenanceCreate model)
         {
             var entity =
                 new Maintenance()
                 {
+                    // OwnerId = _userId,
                     MaintenanceMileage = model.MaintenanceMileage,
                     MaintenanceDescription = model.MaintenanceDescription
                 };
@@ -45,6 +53,40 @@ namespace MaintainMe.Services
 
                 return query.ToArray();
             }
-        } 
+        }
+
+        public MaintenanceDetail GetMaintenanceById(int maintenanceId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Maintenances
+                        .Single(e => e.MaintenanceId == maintenanceId);
+                return
+                    new MaintenanceDetail
+                    {
+                        MaintenanceId = entity.MaintenanceId,
+                        MaintenanceMileage = entity.MaintenanceMileage,
+                        MaintenanceDescription = entity.MaintenanceDescription
+                    };
+            }
+        }
+
+        public bool UpdateMaintenance(MaintenanceEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Maintenances
+                        .Single(e => e.MaintenanceId == model.MaintenanceId);
+
+                entity.MaintenanceMileage = model.MaintenanceMileage;
+                entity.MaintenanceDescription = model.MaintenanceDescription;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

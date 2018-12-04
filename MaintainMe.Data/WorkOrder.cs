@@ -11,6 +11,8 @@ namespace MaintainMe.Data
     {
         [Key]
         public int WorkOrderId { get; set; }
+        [Required]
+        public Guid OwnerId { get; set; }
         public int MaintId { get; set; }
         public int CarId { get; set; }
         [Required]

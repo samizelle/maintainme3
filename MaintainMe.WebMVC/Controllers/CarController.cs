@@ -28,8 +28,6 @@ namespace MaintainMe.WebMVC.Controllers
             return View();
         }
 
-        // This is where it breaks!!!
-
         // POST: Car Create
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -41,11 +39,11 @@ namespace MaintainMe.WebMVC.Controllers
 
             if (service.CreateCar(model))
             {
-                TempData["SaveResult"] = "Your note was created";
+                TempData["SaveResult"] = "Car created";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "Car was not created");
+            ModelState.AddModelError("", "Car not created");
 
             return View(model);
         }

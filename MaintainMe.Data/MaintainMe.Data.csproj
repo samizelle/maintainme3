@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.Designer.cs">
       <DependentUpon>201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.cs" />
+    <Compile Include="Migrations\201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.Designer.cs">
+      <DependentUpon>201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkOrder.cs" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.resx">
       <DependentUpon>201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.resx">
+      <DependentUpon>201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
