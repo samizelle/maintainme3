@@ -24,7 +24,9 @@ namespace MaintainMe.Services
                 {
                     OwnerId = _userId,
                     FirstName = model.FirstName,
-                    LastName = model.LastName
+                    LastName = model.LastName,
+                    Address = model.Address,
+                    CityStZip = model.CityStZip
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,7 +50,9 @@ namespace MaintainMe.Services
                                 {
                                     CarOwnerId = e.CarOwnerId,
                                     FirstName = e.FirstName,
-                                    LastName = e.LastName
+                                    LastName = e.LastName,
+                                    Address = e.Address,
+                                    CityStZip = e.CityStZip
                                 }
                         );
 
@@ -69,7 +73,9 @@ namespace MaintainMe.Services
                     {
                         CarOwnerId = entity.CarOwnerId,
                         FirstName = entity.FirstName,
-                        LastName = entity.LastName
+                        LastName = entity.LastName,
+                        Address = entity.Address,
+                        CityStZip = entity.CityStZip
                     };
             }
         }
@@ -85,6 +91,8 @@ namespace MaintainMe.Services
 
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
+                entity.Address = model.Address;
+                entity.CityStZip = model.CityStZip;
 
                 return ctx.SaveChanges() == 1;
             }

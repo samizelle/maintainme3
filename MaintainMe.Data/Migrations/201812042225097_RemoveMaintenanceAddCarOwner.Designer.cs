@@ -7,13 +7,13 @@ namespace MaintainMe.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class RemoveMaintenanceAddCarOwner : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveMaintenanceAddCarOwner));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812030209282_InitialCreate"; }
+            get { return "201812042225097_RemoveMaintenanceAddCarOwner"; }
         }
         
         string IMigrationMetadata.Source

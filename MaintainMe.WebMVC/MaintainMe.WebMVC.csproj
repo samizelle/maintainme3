@@ -198,7 +198,6 @@
     <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\CarOwnerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MaintenanceController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -267,20 +266,16 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Car\Index.cshtml" />
-    <Content Include="Views\Car\Create.cshtml" />
-    <Content Include="Views\Car\Details.cshtml" />
-    <Content Include="Views\Car\Edit.cshtml" />
-    <Content Include="Views\Car\Delete.cshtml" />
-    <Content Include="Views\Maintenance\Index.cshtml" />
-    <Content Include="Views\Maintenance\Create.cshtml" />
-    <Content Include="Views\Maintenance\Details.cshtml" />
-    <Content Include="Views\Maintenance\Edit.cshtml" />
     <Content Include="Views\CarOwner\Index.cshtml" />
     <Content Include="Views\CarOwner\Create.cshtml" />
     <Content Include="Views\CarOwner\Details.cshtml" />
     <Content Include="Views\CarOwner\Edit.cshtml" />
     <Content Include="Views\CarOwner\Delete.cshtml" />
+    <Content Include="Views\Car\Index.cshtml" />
+    <Content Include="Views\Car\Create.cshtml" />
+    <Content Include="Views\Car\Details.cshtml" />
+    <Content Include="Views\Car\Edit.cshtml" />
+    <Content Include="Views\Car\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

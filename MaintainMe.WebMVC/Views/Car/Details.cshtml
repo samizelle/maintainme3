@@ -19,6 +19,14 @@
         </dd>
 
         <dt>
+            @Html.DisplayNameFor(model => model.CarOwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarOwnerId)
+        </dd>
+
+        <dt>
             @Html.DisplayNameFor(model => model.CarMake)
         </dt>
 
@@ -37,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.CarId }) |
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

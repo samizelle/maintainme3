@@ -56,7 +56,6 @@
   <ItemGroup>
     <Compile Include="CarOwnerService.cs" />
     <Compile Include="CarService.cs" />
-    <Compile Include="MaintenanceService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

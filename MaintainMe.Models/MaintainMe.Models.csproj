@@ -62,10 +62,6 @@
     <Compile Include="CarOwnerDetail.cs" />
     <Compile Include="CarOwnerEdit.cs" />
     <Compile Include="CarOwnerListItem.cs" />
-    <Compile Include="MaintenanceCreate.cs" />
-    <Compile Include="MaintenanceDetail.cs" />
-    <Compile Include="MaintenanceEdit.cs" />
-    <Compile Include="MaintenanceListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -57,22 +57,9 @@
     <Compile Include="Car.cs" />
     <Compile Include="CarOwner.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Maintenance.cs" />
-    <Compile Include="Migrations\201812030209282_InitialCreate.cs" />
-    <Compile Include="Migrations\201812030209282_InitialCreate.Designer.cs">
-      <DependentUpon>201812030209282_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812031815301_CarMakeCarModel.cs" />
-    <Compile Include="Migrations\201812031815301_CarMakeCarModel.Designer.cs">
-      <DependentUpon>201812031815301_CarMakeCarModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs" />
-    <Compile Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.Designer.cs">
-      <DependentUpon>201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.cs" />
-    <Compile Include="Migrations\201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.Designer.cs">
-      <DependentUpon>201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.cs</DependentUpon>
+    <Compile Include="Migrations\201812042225097_RemoveMaintenanceAddCarOwner.cs" />
+    <Compile Include="Migrations\201812042225097_RemoveMaintenanceAddCarOwner.Designer.cs">
+      <DependentUpon>201812042225097_RemoveMaintenanceAddCarOwner.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,17 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812030209282_InitialCreate.resx">
-      <DependentUpon>201812030209282_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812031815301_CarMakeCarModel.resx">
-      <DependentUpon>201812031815301_CarMakeCarModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.resx">
-      <DependentUpon>201812032121546_deleteServiceEventAddMaintenanceAndWorkOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.resx">
-      <DependentUpon>201812041753193_AddOwnerIdToMaintenanceAndWorkOrderTables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812042225097_RemoveMaintenanceAddCarOwner.resx">
+      <DependentUpon>201812042225097_RemoveMaintenanceAddCarOwner.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
