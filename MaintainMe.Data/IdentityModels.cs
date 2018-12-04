@@ -32,8 +32,8 @@ namespace MaintainMe.Data
             return new ApplicationDbContext();
         }
 
+        public DbSet<CarOwner> CarOwners { get; set; }
         public DbSet<Car> Cars { get; set; }
-        public DbSet<Maintenance> Maintenances { get; set; }
         public DbSet<WorkOrder> WorkOrders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
