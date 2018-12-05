@@ -16,8 +16,10 @@ namespace MaintainMe.Data
         public int CarId { get; set; }
         [Required]
         public int CarMileage { get; set; }
-        [Required]
-        public DateTime WorkOrderDate { get; set; }
+        [Display(Name = "WorkOrder Detail")]
+        public string WorkOrderDetail { get; set; }
+        [Display(Name = "WorkOrder Date")]
+        public DateTime? WorkOrderDate { get; set; }
         public virtual Car Car { get; set; }
     }
 }

@@ -67,7 +67,7 @@ namespace MaintainMe.Services
                 var entity =
                     ctx
                         .CarOwners
-                        .Single(e => e.CarOwnerId == carOwnerId/* && e.OwnerId == _userId*/);
+                        .Single(e => e.CarOwnerId == carOwnerId && e.OwnerId == _userId);
                 return
                     new CarOwnerDetail
                     {
@@ -87,8 +87,9 @@ namespace MaintainMe.Services
                 var entity =
                     ctx
                         .CarOwners
-                        .Single(e => e.CarOwnerId == model.CarOwnerId/* && e.OwnerId == _userId*/);
+                        .Single(e => e.CarOwnerId == model.CarOwnerId && e.OwnerId == _userId);
 
+                entity.CarOwnerId = model.CarOwnerId;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.Address = model.Address;
@@ -105,7 +106,7 @@ namespace MaintainMe.Services
                 var entity =
                     ctx
                         .CarOwners
-                        .Single(e => e.CarOwnerId == carOwnerId/* && e.OwnerId == _userId*/);
+                        .Single(e => e.CarOwnerId == carOwnerId && e.OwnerId == _userId);
 
                 ctx.CarOwners.Remove(entity);
 

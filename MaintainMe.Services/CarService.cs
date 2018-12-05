@@ -23,6 +23,7 @@ namespace MaintainMe.Services
                 new Car()
                 {
                     OwnerId = _userId,
+                    CarOwnerId = model.CarOwnerId,
                     CarMake = model.CarMake,
                     CarModel = model.CarModel
                 };
@@ -47,6 +48,7 @@ namespace MaintainMe.Services
                                 new CarListItem
                                 {
                                     CarId = e.CarId,
+                                    CarOwnerId = e.CarOwnerId,
                                     CarMake = e.CarMake,
                                     CarModel = e.CarModel
                                 }
@@ -68,6 +70,7 @@ namespace MaintainMe.Services
                     new CarDetail
                     {
                         CarId = entity.CarId,
+                        CarOwnerId = entity.CarOwnerId,
                         CarMake = entity.CarMake,
                         CarModel = entity.CarModel
                     };
@@ -83,6 +86,7 @@ namespace MaintainMe.Services
                         .Cars
                         .Single(e => e.CarId == model.CarId && e.OwnerId == _userId);
 
+                entity.CarOwnerId = model.CarOwnerId;
                 entity.CarMake = model.CarMake;
                 entity.CarModel = model.CarModel;
 

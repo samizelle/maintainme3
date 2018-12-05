@@ -17,6 +17,6 @@ namespace MaintainMe.Data
         public string CarMake { get; set; }
         [Required]
         public string CarModel { get; set; }
-        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
+        public virtual CarOwner CarOwner { get; set; }
     }
 }
