@@ -63,6 +63,10 @@
     <Compile Include="CarOwnerEdit.cs" />
     <Compile Include="CarOwnerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WorkOrderCreate.cs" />
+    <Compile Include="WorkOrderDetailModel.cs" />
+    <Compile Include="WorkOrderEdit.cs" />
+    <Compile Include="WorkOrderListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

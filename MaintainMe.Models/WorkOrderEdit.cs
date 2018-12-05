@@ -5,22 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaintainMe.Data
+namespace MaintainMe.Models
 {
-    public class WorkOrder
+    public class WorkOrderEdit
     {
-        [Key]
         public int WorkOrderId { get; set; }
-        [Required]
-        public Guid OwnerId { get; set; }
         public int CarId { get; set; }
-        [Required]
+        [Display(Name = "Car Mileage")]
         public int CarMileage { get; set; }
-        [Display(Name = "WorkOrder Detail")]
+        [Display(Name = "Work Order Detail")]
+        [MinLength(2)]
+        [MaxLength(100, ErrorMessage = "Max 100 characters")]
         public string WorkOrderDetail { get; set; }
-        [Required]
-        [Display(Name = "WorkOrder Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Work Order Date")]
         public DateTime WorkOrderDate { get; set; }
-        public virtual Car Car { get; set; }
     }
 }

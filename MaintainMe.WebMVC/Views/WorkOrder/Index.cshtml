@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MaintainMe.Models.WorkOrderListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CarMileage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkOrderDetail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkOrderDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CarMileage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkOrderDetail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkOrderDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WorkOrderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WorkOrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WorkOrderId })
+        </td>
+    </tr>
+}
+
+</table>

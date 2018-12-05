@@ -21,8 +21,7 @@ namespace MaintainMe.Services
         {
             var entity =
                 new WorkOrder()
-             
-                    WorkOrderId = model.WorkOrderId,
+                { 
                     OwnerId = _userId,
                     CarId = model.CarId, 
                     CarMileage = model.CarMileage,
@@ -37,22 +36,23 @@ namespace MaintainMe.Services
             }
         }
 
-        public IEnumerable<CarListItem> GetCars()
+        public IEnumerable<WorkOrderListItem> GetWorkOrders()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .Cars
+                        .WorkOrders
                         .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
-                                new CarListItem
+                                new WorkOrderListItem
                                 {
+                                    WorkOrderId = e.WorkOrderId,
                                     CarId = e.CarId,
-                                    CarOwnerId = e.CarOwnerId,
-                                    CarMake = e.CarMake,
-                                    CarModel = e.CarModel
+                                    CarMileage = e.CarMileage,
+                                    WorkOrderDetail = e.WorkOrderDetail,
+                                    WorkOrderDate = e.WorkOrderDate
                                 }
                         );
 
@@ -60,52 +60,54 @@ namespace MaintainMe.Services
             }
         }
 
-        public CarDetail GetCarById(int carId)
+        public WorkOrderDetailModel GetWorkOrderById(int WorkOrderId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Cars
-                        .Single(e => e.CarId == carId && e.OwnerId == _userId);
+                        .WorkOrders
+                        .Single(e => e.WorkOrderId == WorkOrderId && e.OwnerId == _userId);
                 return
-                    new CarDetail
+                    new WorkOrderDetailModel
                     {
+                        WorkOrderId = entity.WorkOrderId,
                         CarId = entity.CarId,
-                        CarOwnerId = entity.CarOwnerId,
-                        CarMake = entity.CarMake,
-                        CarModel = entity.CarModel
+                        CarMileage = entity.CarMileage,
+                        WorkOrderDetail = entity.WorkOrderDetail,
+                        WorkOrderDate = entity.WorkOrderDate
                     };
             }
         }
 
-        public bool UpdateCar(CarEdit model)
+        public bool UpdateWorkOrder(WorkOrderEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Cars
-                        .Single(e => e.CarId == model.CarId && e.OwnerId == _userId);
+                        .WorkOrders
+                        .Single(e => e.WorkOrderId == model.WorkOrderId && e.OwnerId == _userId);
 
-                entity.CarOwnerId = model.CarOwnerId;
-                entity.CarMake = model.CarMake;
-                entity.CarModel = model.CarModel;
+                entity.CarId = model.CarId;
+                entity.CarMileage = model.CarMileage;
+                entity.WorkOrderDetail = model.WorkOrderDetail;
+                entity.WorkOrderDate = model.WorkOrderDate;
 
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public bool DeleteCar(int carId)
+        public bool DeleteWorkOrder(int workOrderId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Cars
-                        .Single(e => e.CarId == carId && e.OwnerId == _userId);
+                        .WorkOrders
+                        .Single(e => e.WorkOrderId == workOrderId && e.OwnerId == _userId);
 
-                ctx.Cars.Remove(entity);
+                ctx.WorkOrders.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
