@@ -66,6 +66,7 @@ namespace MaintainMe.WebMVC.Controllers
                 new CarEdit
                 {
                     CarId = detail.CarId,
+                    CarOwnerId = detail.CarOwnerId,
                     CarMake = detail.CarMake,
                     CarModel = detail.CarModel
                 };

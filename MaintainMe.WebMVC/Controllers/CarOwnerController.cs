@@ -67,7 +67,9 @@ namespace MaintainMe.WebMVC.Controllers
                 {
                     CarOwnerId = detail.CarOwnerId,
                     FirstName = detail.FirstName,
-                    LastName = detail.LastName
+                    LastName = detail.LastName,
+                    Address = detail.Address,
+                    CityStZip = detail.CityStZip
                 };
             return View(model);
         }

@@ -11,7 +11,7 @@ namespace MaintainMe.Models
     {
         [Required]
         public int CarId { get; set; }
-        public Guid OwnerId { get; set; }
+        [Display(Name = "Car Owner ID")]
         public int CarOwnerId { get; set; }
         [Display(Name = "Car Make")]
         public string CarMake { get; set; }
