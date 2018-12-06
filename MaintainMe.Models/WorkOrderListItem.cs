@@ -21,7 +21,7 @@ namespace MaintainMe.Models
         [MaxLength(100, ErrorMessage = "Max 100 characters")]
         public string WorkOrderDetail { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "WO Date")]
         public DateTime WorkOrderDate { get; set; }
     }

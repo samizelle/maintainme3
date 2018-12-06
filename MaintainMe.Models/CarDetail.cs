@@ -9,10 +9,11 @@ namespace MaintainMe.Models
 {
     public class CarDetail
     {
-        [Required]
+
         public int CarId { get; set; }
         [Display(Name = "Car Owner ID")]
         public int CarOwnerId { get; set; }
+        public string FullName { get; set; }
         [Display(Name = "Car Make")]
         public string CarMake { get; set; }
         [Display(Name = "Car Model")]
