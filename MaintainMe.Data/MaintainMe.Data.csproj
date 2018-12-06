@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201812051449310_ChangeDataTable.Designer.cs">
       <DependentUpon>201812051449310_ChangeDataTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812052211417_AddWorkOrderDataTableCRUD.cs" />
+    <Compile Include="Migrations\201812052211417_AddWorkOrderDataTableCRUD.Designer.cs">
+      <DependentUpon>201812052211417_AddWorkOrderDataTableCRUD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkOrder.cs" />
@@ -93,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812051449310_ChangeDataTable.resx">
       <DependentUpon>201812051449310_ChangeDataTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812052211417_AddWorkOrderDataTableCRUD.resx">
+      <DependentUpon>201812052211417_AddWorkOrderDataTableCRUD.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

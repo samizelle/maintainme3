@@ -64,6 +64,7 @@ namespace MaintainMe.WebMVC.Controllers
             var model =
                 new WorkOrderEdit
                 {
+                    WorkOrderId = detail.WorkOrderId,
                     CarId = detail.CarId,
                     CarMileage = detail.CarMileage,
                     WorkOrderDetail = detail.WorkOrderDetail,

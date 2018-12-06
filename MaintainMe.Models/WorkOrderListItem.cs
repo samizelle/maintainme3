@@ -12,8 +12,6 @@ namespace MaintainMe.Models
         [Key]
         [Display(Name = "Work Order ID")]
         public int WorkOrderId { get; set; }
-        [Display(Name = "Owner ID")]
-        public Guid OwnerId { get; set; }
         [Display(Name = "Car ID")]
         public int CarId { get; set; }
         [Display(Name = "Car Mileage")]

@@ -1,0 +1,58 @@
+﻿@model MaintainMe.Models.WorkOrderDetailModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkOrderDetailModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkOrderId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkOrderId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CarMileage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CarMileage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkOrderDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkOrderDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkOrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkOrderDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
