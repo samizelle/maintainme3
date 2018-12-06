@@ -57,50 +57,12 @@
     <Compile Include="Car.cs" />
     <Compile Include="CarOwner.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201812042225097_RemoveMaintenanceAddCarOwner.cs" />
-    <Compile Include="Migrations\201812042225097_RemoveMaintenanceAddCarOwner.Designer.cs">
-      <DependentUpon>201812042225097_RemoveMaintenanceAddCarOwner.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812050151361_AddFieldToWorkOrder.cs" />
-    <Compile Include="Migrations\201812050151361_AddFieldToWorkOrder.Designer.cs">
-      <DependentUpon>201812050151361_AddFieldToWorkOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812050205518_changedDateformat.cs" />
-    <Compile Include="Migrations\201812050205518_changedDateformat.Designer.cs">
-      <DependentUpon>201812050205518_changedDateformat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812051449310_ChangeDataTable.cs" />
-    <Compile Include="Migrations\201812051449310_ChangeDataTable.Designer.cs">
-      <DependentUpon>201812051449310_ChangeDataTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812052211417_AddWorkOrderDataTableCRUD.cs" />
-    <Compile Include="Migrations\201812052211417_AddWorkOrderDataTableCRUD.Designer.cs">
-      <DependentUpon>201812052211417_AddWorkOrderDataTableCRUD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkOrder.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812042225097_RemoveMaintenanceAddCarOwner.resx">
-      <DependentUpon>201812042225097_RemoveMaintenanceAddCarOwner.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812050151361_AddFieldToWorkOrder.resx">
-      <DependentUpon>201812050151361_AddFieldToWorkOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812050205518_changedDateformat.resx">
-      <DependentUpon>201812050205518_changedDateformat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812051449310_ChangeDataTable.resx">
-      <DependentUpon>201812051449310_ChangeDataTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812052211417_AddWorkOrderDataTableCRUD.resx">
-      <DependentUpon>201812052211417_AddWorkOrderDataTableCRUD.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

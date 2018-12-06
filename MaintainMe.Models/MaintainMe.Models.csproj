@@ -72,5 +72,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MaintainMe.Data\MaintainMe.Data.csproj">
+      <Project>{571753B0-2ACD-44D0-81D8-65AF06187969}</Project>
+      <Name>MaintainMe.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

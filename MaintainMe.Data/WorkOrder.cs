@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace MaintainMe.Data
 {
+    public enum WorkOrderDetail { Oil_Change, Air_Filter, Windshield_Wipers, Brake_Service, Fuel_Filter, Battery }
+
     public class WorkOrder
     {
         [Key]
@@ -17,7 +19,7 @@ namespace MaintainMe.Data
         [Required]
         public int CarMileage { get; set; }
         [Display(Name = "WorkOrder Detail")]
-        public string WorkOrderDetail { get; set; }
+        public WorkOrderDetail WorkOrderDetail { get; set; }
         [Required]
         [Display(Name = "WorkOrder Date")]
         public DateTime WorkOrderDate { get; set; }
