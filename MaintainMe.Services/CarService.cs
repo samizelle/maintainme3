@@ -23,6 +23,9 @@ namespace MaintainMe.Services
                 new Car()
                 {
                     OwnerId = _userId,
+                    CarOwnerId = model.CarOwnerId,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
                     FullName = model.FullName,
                     CarMake = model.CarMake,
                     CarModel = model.CarModel

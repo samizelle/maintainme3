@@ -11,9 +11,8 @@ namespace MaintainMe.Data
     {
         [Key]
         public int CarId { get; set; }
-        public int CarOwnerId { get; set; }
-        public string FullName { get; set; }
         public Guid OwnerId { get; set; }
+        public int CarOwnerId { get; set; }
         [Required]
         public string CarMake { get; set; }
         [Required]

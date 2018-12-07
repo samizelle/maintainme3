@@ -19,8 +19,6 @@ namespace MaintainMe.Data
         public string Address { get; set; }
         public string CityStZip { get; set; }
 
-        public string FullName => FirstName + " " + LastName; 
-
         public virtual ICollection<Car> Cars { get; set; }
     }
 }
