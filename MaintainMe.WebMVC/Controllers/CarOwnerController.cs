@@ -124,15 +124,15 @@ namespace MaintainMe.WebMVC.Controllers
 
         private CarOwnerService CreateCarOwnerService()
         {
+            return new CarOwnerService(Guid.Parse(User.Identity.GetUserId()));
+            
+        }
+        /* 
+        private CarOwnerService CreateCarOwnerService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CarOwnerService(userId);
             return service;
-        }
-
-        /*private CarOwnerService2 CreateCarOwnerService2()
-        {
-            return new CarOwnerService2(Guid.Parse(User.Identity.GetUserId()));
         }*/
-
     }
 }

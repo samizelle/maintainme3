@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201812071956345_update.Designer.cs">
       <DependentUpon>201812071956345_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812072119258_barebones.cs" />
+    <Compile Include="Migrations\201812072119258_barebones.Designer.cs">
+      <DependentUpon>201812072119258_barebones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkOrder.cs" />
@@ -86,6 +90,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812071956345_update.resx">
       <DependentUpon>201812071956345_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812072119258_barebones.resx">
+      <DependentUpon>201812072119258_barebones.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

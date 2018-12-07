@@ -10,9 +10,6 @@ namespace MaintainMe.Models
     {
         public int CarId { get; set; }
         public int CarOwnerId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName { get; set; }
         public string CarMake { get; set; }
         public string CarModel { get; set; }
     }

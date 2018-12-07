@@ -124,17 +124,16 @@ namespace MaintainMe.WebMVC.Controllers
 
         private WorkOrderService CreateWorkOrderService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new WorkOrderService(userId);
-            return service;
+            return new WorkOrderService(Guid.Parse(User.Identity.GetUserId()));
         }
+            /*var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new WorkOrderService(userId);
+            return service;*/
 
         private string PrivateEnumHelper(WorkOrderDetail workOrderDetail)
         {
             var item = EnumHelper<WorkOrderDetail>.GetDisplayValue(workOrderDetail);
             return item;
-
         }
-
     }
 }

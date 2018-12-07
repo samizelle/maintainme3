@@ -30,6 +30,7 @@ namespace MaintainMe.WebMVC.Controllers
                 CarOwnerId = id
             };
             return View(model);
+            //return View();
         }
 
         // POST: Car Create
@@ -127,9 +128,11 @@ namespace MaintainMe.WebMVC.Controllers
 
         private CarService CreateCarService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+
+            return new CarService(Guid.Parse(User.Identity.GetUserId()));
+            /*var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CarService(userId);
-            return service;
+            return service;*/
         }
     }
 }

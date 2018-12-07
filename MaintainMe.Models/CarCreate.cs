@@ -12,9 +12,6 @@ namespace MaintainMe.Models
         [Required]
         [Display(Name = "Car Owner ID")]
         public int CarOwnerId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string FullName { get; set; }
         [Required]
         [Display(Name = "Car Make")]
         [MinLength(2, ErrorMessage ="Please enter at least two characters")]
