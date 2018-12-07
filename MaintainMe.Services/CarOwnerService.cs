@@ -55,8 +55,12 @@ namespace MaintainMe.Services
                                     CityStZip = e.CityStZip
                                 }
                         );
-
-                return query.ToArray();
+                var list = query.ToList();
+                foreach (var carOwner in list)
+                {
+                    carOwner.FullName = $"{carOwner.FirstName} {carOwner.LastName}";
+                }
+                return list.ToArray();
             }
         }
 
@@ -72,8 +76,7 @@ namespace MaintainMe.Services
                     new CarOwnerDetail
                     {
                         CarOwnerId = entity.CarOwnerId,
-                        FirstName = entity.FirstName,
-                        LastName = entity.LastName,
+                        FullName = entity.FullName,
                         Address = entity.Address,
                         CityStZip = entity.CityStZip
                     };

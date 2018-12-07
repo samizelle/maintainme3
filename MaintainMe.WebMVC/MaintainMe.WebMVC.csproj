@@ -312,6 +312,10 @@
       <Project>{958fb918-ce2d-4c2e-b5c2-79370be3323b}</Project>
       <Name>MaintainMe.Services</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WorkOrder.Utilities\WorkOrder.Utilities.csproj">
+      <Project>{95c5fb96-d00e-45c0-801f-1696cc9b65ce}</Project>
+      <Name>WorkOrder.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

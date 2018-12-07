@@ -23,7 +23,7 @@ namespace MaintainMe.Services
                 new Car()
                 {
                     OwnerId = _userId,
-                    CarOwnerId = model.CarOwnerId,
+                    FullName = model.FullName,
                     CarMake = model.CarMake,
                     CarModel = model.CarModel
                 };
@@ -49,6 +49,7 @@ namespace MaintainMe.Services
                                 {
                                     CarId = e.CarId,
                                     CarOwnerId = e.CarOwnerId,
+                                    FullName = e.FullName,
                                     CarMake = e.CarMake,
                                     CarModel = e.CarModel
                                 }
@@ -71,6 +72,7 @@ namespace MaintainMe.Services
                     {
                         CarId = entity.CarId,
                         CarOwnerId = entity.CarOwnerId,
+                        FullName = entity.FullName,
                         CarMake = entity.CarMake,
                         CarModel = entity.CarModel
                     };

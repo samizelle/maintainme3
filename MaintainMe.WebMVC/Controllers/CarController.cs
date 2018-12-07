@@ -23,9 +23,13 @@ namespace MaintainMe.WebMVC.Controllers
         }
 
         // GET: Car Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            CarCreate model = new CarCreate
+            {
+                CarOwnerId = id
+            };
+            return View(model);
         }
 
         // POST: Car Create

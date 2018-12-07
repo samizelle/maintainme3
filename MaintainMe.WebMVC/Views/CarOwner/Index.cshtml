@@ -15,10 +15,7 @@
             @Html.DisplayNameFor(model => model.CarOwnerId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
+            @Html.DisplayNameFor(model => model.FullName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Address)
@@ -35,10 +32,7 @@
             @Html.DisplayFor(modelItem => item.CarOwnerId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
+            @Html.DisplayFor(modelItem => item.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Address)
@@ -47,7 +41,7 @@
             @Html.DisplayFor(modelItem => item.CityStZip)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CarOwnerId}) |
+            @Html.ActionLink("Edit", "Edit", new { id = item.CarOwnerId }) |
             @Html.ActionLink("Details", "Details", new { id = item.CarOwnerId }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.CarOwnerId })
         </td>
