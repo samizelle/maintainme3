@@ -44,5 +44,6 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CarId }) |
+    @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = Model.CarId }, null) |
     @Html.ActionLink("Back to List", "Index")
 </p>

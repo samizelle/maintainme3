@@ -23,9 +23,14 @@ namespace MaintainMe.WebMVC.Controllers
         }
 
         // GET: WorkOrder Create
-        public ActionResult Create()
+        public ActionResult Create(int id)
         {
-            return View();
+            WorkOrderCreate model = new WorkOrderCreate
+            {
+                CarId = id
+            };
+            return View(model);
+            //return View();
         }
 
         // POST: WorkOrder Create

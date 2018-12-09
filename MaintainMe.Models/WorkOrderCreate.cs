@@ -10,6 +10,7 @@ namespace MaintainMe.Models
 {
     public class WorkOrderCreate
     {
+        [Required]
         public int CarId { get; set; }
         [Display(Name = "Car Mileage")]
         public int CarMileage { get; set; }
