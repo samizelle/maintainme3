@@ -31,7 +31,7 @@ namespace MaintainMe.Data
 
         public WorkOrderDetail WorkOrderDetail { get; set; }
 
-        public int? CarOwnerId { get; set; }
+        public int? CarOwnerId  { get; set; }
 
         [Required]
         public DateTime WorkOrderDate { get; set; }

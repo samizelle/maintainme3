@@ -18,11 +18,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CarOwnerId)
+            @Html.DisplayNameFor(model => model.CustomerLastName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CarOwnerId)
+            @Html.DisplayFor(model => model.CustomerLastName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.CarMake)
@@ -44,6 +44,7 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CarId }) |
-    @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = Model.CarId }, null) |
+    @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = Model.CarId , CarOwnerId = Model.CarOwnerId}, null) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+<!--TODO 3 Pass CarOwnerId along in the button?-->

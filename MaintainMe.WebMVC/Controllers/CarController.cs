@@ -54,10 +54,13 @@ namespace MaintainMe.WebMVC.Controllers
         }
 
         // GET Car Details
-        public ActionResult Details(int id)
+        public ActionResult Details(int id/*, int CarOwnerId*/)
         {
             var svc = CreateCarService();
+            //var detail = GetCarOwnerByCarId();
             var model = svc.GetCarById(id);
+            
+            // TODO 2: As you run make sure this model contains CarOwnerId.
 
             return View(model);
         }
@@ -67,8 +70,7 @@ namespace MaintainMe.WebMVC.Controllers
         {
             var service = CreateCarService();
             var detail = service.GetCarById(id);
-            var model =
-                new CarEdit
+            var model = new CarEdit
                 {
                     CarId = detail.CarId,
                     CarOwnerId = detail.CarOwnerId,
@@ -128,7 +130,6 @@ namespace MaintainMe.WebMVC.Controllers
 
         private CarService CreateCarService()
         {
-
             return new CarService(Guid.Parse(User.Identity.GetUserId()));
             /*var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CarService(userId);

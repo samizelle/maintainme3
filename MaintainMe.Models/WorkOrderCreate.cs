@@ -19,9 +19,10 @@ namespace MaintainMe.Models
         public WorkOrderDetail WorkOrderDetail { get; set; }
 
         public int CarOwnerId { get; set; }
-        //[DataType(DataType.Date)]
-        //[DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
-        //[Display(Name = "Work Order Date")]
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Work Order Date")]
         public DateTime WorkOrderDate { get; set; }
 
         public virtual Car Car { get; set; }

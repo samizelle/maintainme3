@@ -76,7 +76,6 @@ namespace MaintainMe.Services
                         Address = entity.Address,
                         CityStZip = entity.CityStZip
                     };
-
             }
         }
 

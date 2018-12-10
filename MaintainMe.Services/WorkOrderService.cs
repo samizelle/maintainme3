@@ -74,7 +74,7 @@ namespace MaintainMe.Services
                     new WorkOrderDetailModel
                     {
                         WorkOrderId = entity.WorkOrderId,
-                        CarId = entity.CarId,
+                        CustomerLastName = entity.CarOwner.LastName,
                         CarMileage = entity.CarMileage,
                         WorkOrderDetail = entity.WorkOrderDetail,
                         WorkOrderDate = entity.WorkOrderDate

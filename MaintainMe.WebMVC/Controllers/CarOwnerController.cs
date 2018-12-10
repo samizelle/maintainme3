@@ -12,7 +12,7 @@ namespace MaintainMe.WebMVC.Controllers
     [Authorize]
     public class CarOwnerController : Controller
     {
-        // GET: Car Owners
+        // GET: CarOwner
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
@@ -22,13 +22,13 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
-        // GET: Car Owner Create
+        // GET: CarOwner Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Car Owner Create
+        // POST: CarOwner Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CarOwnerCreate model)
@@ -48,7 +48,7 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
-        // GET Car Owner Details
+        // GET CarOwner Detail
         public ActionResult Details(int id)
         {
             var svc = CreateCarOwnerService();
@@ -57,6 +57,7 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
+        // Car Detail by CarOwner
         public ActionResult CarOwnerCarIndex(int CarOwnerId)
         {
             var svc = CreateCarOwnerService();
@@ -65,7 +66,7 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
-        // GET Car Owner Edit
+        // GET CarOwner Edit
         public ActionResult Edit(int id)
         {
             var service = CreateCarOwnerService();
@@ -81,7 +82,7 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
-        // POST Car Owner Edit
+        // POST CarOwner Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CarOwnerEdit model)
@@ -106,7 +107,7 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
-        // GET Car Owner Delete
+        // GET CarOwner Delete
         public ActionResult Delete(int id)
         {
             var svc = CreateCarOwnerService();
@@ -115,7 +116,7 @@ namespace MaintainMe.WebMVC.Controllers
             return View(model);
         }
 
-        //POST Car Owner Delete
+        //POST CarOwner Delete
         [HttpPost]
         [ActionName("Delete")]
         [ValidateAntiForgeryToken]
