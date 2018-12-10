@@ -16,6 +16,9 @@
             @Html.DisplayNameFor(model => model.CarId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.CustomerLastName)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.CarMileage)
         </th>
         <th>
@@ -36,6 +39,9 @@
             @Html.DisplayFor(modelItem => item.CarId)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.CustomerLastName)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.CarMileage)
         </td>
         <td>
@@ -45,9 +51,9 @@
             @Html.DisplayFor(modelItem => item.WorkOrderDate)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WorkOrderId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.WorkOrderId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.WorkOrderId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.WorkOrderId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.WorkOrderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.WorkOrderId })
         </td>
     </tr>
 }

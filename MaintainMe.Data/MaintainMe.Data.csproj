@@ -73,6 +73,14 @@
     <Compile Include="Migrations\201812072119258_barebones.Designer.cs">
       <DependentUpon>201812072119258_barebones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812101503457_foreignKeyChanges.cs" />
+    <Compile Include="Migrations\201812101503457_foreignKeyChanges.Designer.cs">
+      <DependentUpon>201812101503457_foreignKeyChanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812101523019_foreignKeyChangesAgain.cs" />
+    <Compile Include="Migrations\201812101523019_foreignKeyChangesAgain.Designer.cs">
+      <DependentUpon>201812101523019_foreignKeyChangesAgain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkOrder.cs" />
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812072119258_barebones.resx">
       <DependentUpon>201812072119258_barebones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101503457_foreignKeyChanges.resx">
+      <DependentUpon>201812101503457_foreignKeyChanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812101523019_foreignKeyChangesAgain.resx">
+      <DependentUpon>201812101523019_foreignKeyChangesAgain.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

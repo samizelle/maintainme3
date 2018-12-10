@@ -80,6 +80,26 @@ namespace MaintainMe.Services
             }
         }
 
+        public IEnumerable<CarListItem> GetCarOwnerCar(int CarOwnerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Cars
+                    .Where(e => e.CarOwnerId == CarOwnerId)
+                    .Select(e =>
+                    new CarListItem
+                    {
+                        CarId = e.CarId,
+                        CarModel = e.CarModel,
+                        CarMake = e.CarMake
+                    });
+
+                return query.ToArray();
+            }
+        }
+
         public bool UpdateCarOwner(CarOwnerEdit model)
         {
             using (var ctx = new ApplicationDbContext())

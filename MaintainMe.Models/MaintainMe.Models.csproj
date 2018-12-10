@@ -58,6 +58,7 @@
     <Compile Include="CarDetail.cs" />
     <Compile Include="CarEdit.cs" />
     <Compile Include="CarListItem.cs" />
+    <Compile Include="CarOwnerCarListItem.cs" />
     <Compile Include="CarOwnerCreate.cs" />
     <Compile Include="CarOwnerDetail.cs" />
     <Compile Include="CarOwnerEdit.cs" />

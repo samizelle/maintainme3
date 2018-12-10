@@ -24,6 +24,7 @@ namespace MaintainMe.Services
                 { 
                     OwnerId = _userId,
                     CarId = model.CarId, 
+                    CarOwnerId = model.CarOwnerId,
                     CarMileage = model.CarMileage,
                     WorkOrderDetail = model.WorkOrderDetail,
                     WorkOrderDate = model.WorkOrderDate
@@ -49,6 +50,7 @@ namespace MaintainMe.Services
                                 new WorkOrderListItem
                                 {
                                     WorkOrderId = e.WorkOrderId,
+                                    CustomerLastName = e.CarOwner.LastName,
                                     CarId = e.CarId,
                                     CarMileage = e.CarMileage,
                                     WorkOrderDetail = e.WorkOrderDetail,
