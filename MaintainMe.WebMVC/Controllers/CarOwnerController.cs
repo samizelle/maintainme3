@@ -18,7 +18,7 @@ namespace MaintainMe.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CarOwnerService(userId);
             var model = service.GetCarOwners();
-            
+
             return View(model);
         }
 
@@ -62,15 +62,14 @@ namespace MaintainMe.WebMVC.Controllers
         {
             var service = CreateCarOwnerService();
             var detail = service.GetCarOwnerById(id);
-            var model =
-                new CarOwnerEdit
-                {
-                    CarOwnerId = detail.CarOwnerId,
-                    FirstName = detail.FirstName,
-                    LastName = detail.LastName,
-                    Address = detail.Address,
-                    CityStZip = detail.CityStZip
-                };
+            var model = new CarOwnerEdit
+            {
+                CarOwnerId = detail.CarOwnerId,
+                FirstName = detail.FirstName,
+                LastName = detail.LastName,
+                Address = detail.Address,
+                CityStZip = detail.CityStZip
+            };
             return View(model);
         }
 
@@ -125,7 +124,7 @@ namespace MaintainMe.WebMVC.Controllers
         private CarOwnerService CreateCarOwnerService()
         {
             return new CarOwnerService(Guid.Parse(User.Identity.GetUserId()));
-            
+
         }
         /* 
         private CarOwnerService CreateCarOwnerService()

@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaintainMe.Data;
 
 namespace MaintainMe.Models
 {
@@ -18,5 +19,7 @@ namespace MaintainMe.Models
         [MaxLength(35)]
         [Display(Name = "City St ZipCode")]
         public string CityStZip { get; set; }
+
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

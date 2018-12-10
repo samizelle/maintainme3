@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaintainMe.Data;
 
 namespace MaintainMe.Models
 {
@@ -12,5 +13,8 @@ namespace MaintainMe.Models
         public int CarOwnerId { get; set; }
         public string CarMake { get; set; }
         public string CarModel { get; set; }
+
+        public virtual CarOwner CarOwner { get; set; }
+        public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }
