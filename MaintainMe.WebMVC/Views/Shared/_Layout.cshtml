@@ -24,9 +24,9 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Car Owner", "Index", "CarOwner")</li>
-                        <li>@Html.ActionLink("Car", "Index", "Car")</li>
-                        <li>@Html.ActionLink("WorkOrder", "Index", "WorkOrder")</li>
+                        <li>@Html.ActionLink("Customers", "Index", "Customer")</li>
+                        <li>@Html.ActionLink("Vehicles", "Index", "Car")</li>
+                        <li>@Html.ActionLink("WorkOrders", "Index", "WorkOrder")</li>
                     }
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>

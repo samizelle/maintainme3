@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MaintainMe.Models
 {
-    public class CarCarOwnerDetail
+    public class CarCustomerDetail
     {
         public int CarId { get; set; }
         public int CustomerId { get; set; }

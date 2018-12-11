@@ -1,10 +1,10 @@
-﻿@model MaintainMe.Models.CarOwnerDetail
+﻿@model MaintainMe.Models.CustomerDetail
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Car Owner Details</h2>
+<h2>Customer Details</h2>
 
 <div>
     <hr />
@@ -53,6 +53,6 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerId }) |
-    @Html.ActionLink("Add a New Car", "Create", "Car", new { id = Model.CustomerId }, null) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Add a New Vehicle", "Create", "Car", new { id = Model.CustomerId }, null) |
+    @Html.ActionLink("Back to Customer List", "Index")
 </p>

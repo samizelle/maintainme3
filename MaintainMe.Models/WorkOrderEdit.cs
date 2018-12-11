@@ -17,7 +17,7 @@ namespace MaintainMe.Models
         public int CarMileage { get; set; }
         public string WorkOrderDetail { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = false)]
         [Display(Name = "Work Order Date")]
         public DateTime WorkOrderDate { get; set; }
 

@@ -54,16 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarCarOwnerDetail.cs" />
+    <Compile Include="CarCustomerDetail.cs" />
     <Compile Include="CarCreate.cs" />
     <Compile Include="CarDetail.cs" />
     <Compile Include="CarEdit.cs" />
     <Compile Include="CarListItem.cs" />
-    <Compile Include="CarOwnerCarListItem.cs" />
-    <Compile Include="CarOwnerCreate.cs" />
-    <Compile Include="CarOwnerDetail.cs" />
-    <Compile Include="CarOwnerEdit.cs" />
-    <Compile Include="CarOwnerListItem.cs" />
+    <Compile Include="CustomerCarListItem.cs" />
+    <Compile Include="CustomerCreate.cs" />
+    <Compile Include="CustomerDetail.cs" />
+    <Compile Include="CustomerEdit.cs" />
+    <Compile Include="CustomerListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkOrderCreate.cs" />
     <Compile Include="WorkOrderDetailModel.cs" />

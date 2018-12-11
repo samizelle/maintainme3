@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaintainMe.Models
 {
-    public class CarOwnerDetail
+    public class CustomerDetail
     {
         [Display(Name = "Customer ID")]
         public int CustomerId { get; set; }

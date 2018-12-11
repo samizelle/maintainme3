@@ -8,16 +8,16 @@ using MaintainMe.Models;
 
 namespace MaintainMe.Services
 {
-    public class CarOwnerService
+    public class CustomerService
     {
         private readonly Guid _userId;
 
-        public CarOwnerService(Guid userId)
+        public CustomerService(Guid userId)
         {
             _userId = userId;
         }
 
-        public bool CreateCarOwner(CarOwnerCreate model)
+        public bool CreateCustomer(CustomerCreate model)
         {
             var entity =
                 new Customer()
@@ -36,7 +36,7 @@ namespace MaintainMe.Services
             }
         }
 
-        public IEnumerable<CarOwnerListItem> GetCarOwners()
+        public IEnumerable<CustomerListItem> GetCustomers()
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -46,7 +46,7 @@ namespace MaintainMe.Services
                         .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
-                                new CarOwnerListItem
+                                new CustomerListItem
                                 {
                                     CustomerId = e.CustomerId,
                                     FirstName = e.FirstName,
@@ -59,7 +59,7 @@ namespace MaintainMe.Services
             }
         }
 
-        public CarOwnerDetail GetCarOwnerById(int customerId)
+        public CustomerDetail GetCustomerById(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -68,7 +68,7 @@ namespace MaintainMe.Services
                         .Customers
                         .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
                 return
-                    new CarOwnerDetail
+                    new CustomerDetail
                     {
                         CustomerId = entity.CustomerId,
                         FirstName = entity.FirstName,
@@ -79,7 +79,7 @@ namespace MaintainMe.Services
             }
         }
 
-        public IEnumerable<CarListItem> GetCarOwnerCar(int customerId)
+        public IEnumerable<CarListItem> GetCustomerCar(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -99,7 +99,7 @@ namespace MaintainMe.Services
             }
         }
 
-        public bool UpdateCarOwner(CarOwnerEdit model)
+        public bool UpdateCustomer(CustomerEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -118,7 +118,7 @@ namespace MaintainMe.Services
             }
         }
 
-        public bool DeleteCarOwner(int customerId)
+        public bool DeleteCustomer(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
