@@ -10,8 +10,8 @@ namespace MaintainMe.Models
 {
     public class CarOwnerListItem
     {
-        [Display(Name = "Car Owner ID")]
-        public int CarOwnerId { get; set; }
+        [Display(Name = "Customer ID")]
+        public int CustomerId { get; set; }
         [Display(Name = "Name")]
         public string FirstName { get; set; }
         public string LastName { get; set; }

@@ -44,7 +44,7 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CarId }) |
-    @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = Model.CarId , CarOwnerId = Model.CarOwnerId}, null) |
+    @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = Model.CarId , CustomerId = Model.CustomerId}, null) |
     @Html.ActionLink("Back to List", "Index")
 </p>
 <!--TODO 3 Pass CarOwnerId along in the button?-->

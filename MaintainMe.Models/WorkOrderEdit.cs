@@ -12,6 +12,7 @@ namespace MaintainMe.Models
     {
         public int WorkOrderId { get; set; }
         public int CarId { get; set; }
+        public int CustomerId { get; set; }
         [Display(Name = "Car Mileage")]
         public int CarMileage { get; set; }
         public WorkOrderDetail WorkOrderDetail { get; set; }

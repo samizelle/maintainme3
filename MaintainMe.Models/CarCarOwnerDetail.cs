@@ -9,6 +9,6 @@ namespace MaintainMe.Models
     public class CarCarOwnerDetail
     {
         public int CarId { get; set; }
-        public int CarOwnerId { get; set; }
+        public int CustomerId { get; set; }
     }
 }

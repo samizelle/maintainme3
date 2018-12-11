@@ -48,7 +48,7 @@ namespace MaintainMe.Services
                             e =>
                                 new CarOwnerListItem
                                 {
-                                    CarOwnerId = e.CarOwnerId,
+                                    CustomerId = e.CustomerId,
                                     FirstName = e.FirstName,
                                     LastName = e.LastName,
                                     Address = e.Address,
@@ -59,18 +59,18 @@ namespace MaintainMe.Services
             }
         }
 
-        public CarOwnerDetail GetCarOwnerById(int carOwnerId)
+        public CarOwnerDetail GetCarOwnerById(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .CarOwners
-                        .Single(e => e.CarOwnerId == carOwnerId && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
                 return
                     new CarOwnerDetail
                     {
-                        CarOwnerId = entity.CarOwnerId,
+                        CustomerId = entity.CustomerId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         Address = entity.Address,
@@ -79,14 +79,14 @@ namespace MaintainMe.Services
             }
         }
 
-        public IEnumerable<CarListItem> GetCarOwnerCar(int CarOwnerId)
+        public IEnumerable<CarListItem> GetCarOwnerCar(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                     .Cars
-                    .Where(e => e.CarOwnerId == CarOwnerId)
+                    .Where(e => e.CustomerId == customerId)
                     .Select(e =>
                     new CarListItem
                     {
@@ -106,9 +106,9 @@ namespace MaintainMe.Services
                 var entity =
                     ctx
                         .CarOwners
-                        .Single(e => e.CarOwnerId == model.CarOwnerId && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
 
-                entity.CarOwnerId = model.CarOwnerId;
+                entity.CustomerId = model.CustomerId;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.Address = model.Address;
@@ -118,14 +118,14 @@ namespace MaintainMe.Services
             }
         }
 
-        public bool DeleteCarOwner(int carOwnerId)
+        public bool DeleteCarOwner(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .CarOwners
-                        .Single(e => e.CarOwnerId == carOwnerId && e.OwnerId == _userId);
+                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
 
                 ctx.CarOwners.Remove(entity);
 

@@ -58,10 +58,10 @@ namespace MaintainMe.WebMVC.Controllers
         }
 
         // Car Detail by CarOwner
-        public ActionResult CarOwnerCarIndex(int CarOwnerId)
+        public ActionResult CarOwnerCarIndex(int customerId)
         {
             var svc = CreateCarOwnerService();
-            var model = svc.GetCarOwnerCar(CarOwnerId);
+            var model = svc.GetCarOwnerCar(customerId);
 
             return View(model);
         }
@@ -73,7 +73,7 @@ namespace MaintainMe.WebMVC.Controllers
             var detail = service.GetCarOwnerById(id);
             var model = new CarOwnerEdit
             {
-                CarOwnerId = detail.CarOwnerId,
+                CustomerId = detail.CustomerId,
                 FirstName = detail.FirstName,
                 LastName = detail.LastName,
                 Address = detail.Address,
@@ -89,7 +89,7 @@ namespace MaintainMe.WebMVC.Controllers
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.CarOwnerId != id)
+            if (model.CustomerId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

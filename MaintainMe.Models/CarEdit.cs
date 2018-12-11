@@ -10,7 +10,7 @@ namespace MaintainMe.Models
     public class CarEdit
     {
         public int CarId { get; set; }
-        public int CarOwnerId { get; set; }
+        public int CustomerId { get; set; }
         public string CarMake { get; set; }
         public string CarModel { get; set; }
 

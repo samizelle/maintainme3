@@ -13,7 +13,7 @@ namespace MaintainMe.Models
 
         public int CarId { get; set; }
         public string CustomerLastName { get; set; }
-        public int CarOwnerId { get; set; }
+        public int CustomerId { get; set; }
         [Display(Name = "Car Make")]
         public string CarMake { get; set; }
         [Display(Name = "Car Model")]

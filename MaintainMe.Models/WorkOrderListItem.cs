@@ -19,6 +19,7 @@ namespace MaintainMe.Models
         [Display(Name = "Car Mileage")]
         public int CarMileage { get; set; }
 
+        public int CustomerId { get; set; }
         public string CustomerLastName { get; set; }
 
 

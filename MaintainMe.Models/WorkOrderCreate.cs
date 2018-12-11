@@ -12,13 +12,12 @@ namespace MaintainMe.Models
     {
         [Required]
         public int CarId { get; set; }
+        public int CustomerId { get; set; }
 
         [Display(Name = "Car Mileage")]
         public int CarMileage { get; set; }
 
         public WorkOrderDetail WorkOrderDetail { get; set; }
-
-        public int CarOwnerId { get; set; }
 
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
@@ -26,5 +25,6 @@ namespace MaintainMe.Models
         public DateTime WorkOrderDate { get; set; }
 
         public virtual Car Car { get; set; }
+        public virtual CarOwner CarOwner { get; set; }
     }
 }

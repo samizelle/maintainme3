@@ -10,7 +10,7 @@ namespace MaintainMe.Data
     public class CarOwner
     {
         [Key]
-        public int CarOwnerId { get; set; }
+        public int CustomerId { get; set; }
         public Guid OwnerId { get; set; }
         [Display(Name = "First Name")]
         public string FirstName { get; set; }

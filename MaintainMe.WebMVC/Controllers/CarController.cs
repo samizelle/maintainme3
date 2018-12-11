@@ -27,7 +27,7 @@ namespace MaintainMe.WebMVC.Controllers
         {
             CarCreate model = new CarCreate
             {
-                CarOwnerId = id
+                CustomerId = id
             };
             return View(model);
             //return View();
@@ -73,7 +73,7 @@ namespace MaintainMe.WebMVC.Controllers
             var model = new CarEdit
                 {
                     CarId = detail.CarId,
-                    CarOwnerId = detail.CarOwnerId,
+                    CustomerId = detail.CustomerId,
                     CarMake = detail.CarMake,
                     CarModel = detail.CarModel
                 };
