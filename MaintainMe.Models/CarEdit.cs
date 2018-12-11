@@ -14,7 +14,6 @@ namespace MaintainMe.Models
         public string CarMake { get; set; }
         public string CarModel { get; set; }
 
-        public virtual CarOwner CarOwner { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
     }
 }

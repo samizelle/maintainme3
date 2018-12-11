@@ -22,8 +22,7 @@ namespace MaintainMe.Models
         public int CustomerId { get; set; }
         public string CustomerLastName { get; set; }
 
-
-        public WorkOrderDetail WorkOrderDetail { get; set; }
+        public string WorkOrderDetail { get; set; }
 
         [DataType(DataType.Date)]
         //[DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]

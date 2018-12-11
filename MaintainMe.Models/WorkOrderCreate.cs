@@ -23,8 +23,5 @@ namespace MaintainMe.Models
         [DisplayFormat(DataFormatString = "{0:MM-dd-yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Work Order Date")]
         public DateTime WorkOrderDate { get; set; }
-
-        public virtual Car Car { get; set; }
-        public virtual CarOwner CarOwner { get; set; }
     }
 }

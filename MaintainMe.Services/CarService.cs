@@ -85,7 +85,8 @@ namespace MaintainMe.Services
                     new CarDetail
                     {
                         CarId = entity.CarId,
-                        CustomerLastName = entity.CarOwner.LastName,
+                        CustomerId = entity.CustomerId,
+                        //CustomerLastName = entity.CarOwner.LastName,
                         CarMake = entity.CarMake,
                         CarModel = entity.CarModel
                     };

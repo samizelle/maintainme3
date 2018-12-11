@@ -54,7 +54,7 @@ namespace MaintainMe.WebMVC.Controllers
         }
 
         // GET Car Details
-        public ActionResult Details(int id/*, int CarOwnerId*/)
+        public ActionResult Details(int id, int CustomerId)
         {
             var svc = CreateCarService();
             //var detail = GetCarOwnerByCarId();

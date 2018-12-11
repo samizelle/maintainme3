@@ -20,7 +20,7 @@ namespace MaintainMe.Services
         public bool CreateCarOwner(CarOwnerCreate model)
         {
             var entity =
-                new CarOwner()
+                new Customer()
                 {
                     OwnerId = _userId,
                     FirstName = model.FirstName,
@@ -31,7 +31,7 @@ namespace MaintainMe.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.CarOwners.Add(entity);
+                ctx.Customers.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -42,7 +42,7 @@ namespace MaintainMe.Services
             {
                 var query =
                     ctx
-                        .CarOwners
+                        .Customers
                         .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
@@ -65,7 +65,7 @@ namespace MaintainMe.Services
             {
                 var entity =
                     ctx
-                        .CarOwners
+                        .Customers
                         .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
                 return
                     new CarOwnerDetail
@@ -105,7 +105,7 @@ namespace MaintainMe.Services
             {
                 var entity =
                     ctx
-                        .CarOwners
+                        .Customers
                         .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
 
                 entity.CustomerId = model.CustomerId;
@@ -124,10 +124,10 @@ namespace MaintainMe.Services
             {
                 var entity =
                     ctx
-                        .CarOwners
+                        .Customers
                         .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
 
-                ctx.CarOwners.Remove(entity);
+                ctx.Customers.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

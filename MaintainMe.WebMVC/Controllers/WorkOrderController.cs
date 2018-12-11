@@ -32,13 +32,12 @@ namespace MaintainMe.WebMVC.Controllers
 
             //TODO 5: OTHER, possibly more efficient but less instructional
             // or get a car object
-            // var carObject = GetCarByCarId(id);
+            // var carObject = GetCarById(id);
 
             WorkOrderCreate model = new WorkOrderCreate
             {
                 CarId = id,
                 CustomerId = customerId
-                //CarOwnerName = carOwnerName
 
                 //CarOwnerId = carObject.CarOwnerId,
                 //CarOwnerName = carObject.CarOwnerName

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MaintainMe.Data
 {
-    public class CarOwner
+    public class Customer
     {
         [Key]
         public int CustomerId { get; set; }

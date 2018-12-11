@@ -17,7 +17,6 @@ namespace MaintainMe.Data
     public class WorkOrder
     {
         [Key]
-        [Display(Name = "WO ID")]
         public int WorkOrderId { get; set; }
 
         [Required]
@@ -27,14 +26,18 @@ namespace MaintainMe.Data
         public int CarId { get; set; }
 
         [Required]
+        public int CustomerId { get; set; }
+
+        [Required]
         public int CarMileage { get; set; }
 
-        public WorkOrderDetail WorkOrderDetail { get; set; }
+        [Required]
+        public string WorkOrderDetail { get; set; }
 
         [Required]
         public DateTime WorkOrderDate { get; set; }
 
-        public virtual CarOwner CarOwner { get; set; }
         public virtual Car Car { get; set; }
+
     }
 }
