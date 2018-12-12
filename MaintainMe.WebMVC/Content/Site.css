@@ -22,3 +22,32 @@ select,
 textarea {
     max-width: 280px;
 }
+
+a.navbar-brand {
+    padding: 10px;
+    font-size: 3px;
+}
+
+li.nav-item {
+    padding: 10px;
+    font-size: 12rem;
+    color: white;
+}
+
+.nav-item {
+    padding: 10px;
+    font-size: 5rem;
+    color: white;
+}
+
+.navbar-right {
+    color: aliceblue;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+table, .table {
+    font-size: 1rem;
+}
