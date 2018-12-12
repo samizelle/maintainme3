@@ -23,12 +23,26 @@ namespace MaintainMe.WebMVC.Controllers
         }
 
         // GET: WorkOrder Create
-        public ActionResult Create(int id)
+        public ActionResult Create(int id, int customerId)
         {
+            // TODO 4: Another option would be to new up the Car Service.
+            // Call the method GetCarOwnerByCarId and capture it.
+            // var carOwnerId = GetCarOwnerByCarId(id); <--general
+            // var carOwnerName = GetCarOwnerNameByCarOwnerId(carOwnerId);
+
+            //TODO 5: OTHER, possibly more efficient but less instructional
+            // or get a car object
+            // var carObject = GetCarById(id);
+
             WorkOrderCreate model = new WorkOrderCreate
             {
-                CarId = id
+                CarId = id,
+                CustomerId = customerId
+
+                //CarOwnerId = carObject.CarOwnerId,
+                //CarOwnerName = carObject.CarOwnerName
             };
+
             return View(model);
             //return View();
         }
@@ -67,11 +81,11 @@ namespace MaintainMe.WebMVC.Controllers
         {
             var service = CreateWorkOrderService();
             var detail = service.GetWorkOrderById(id);
-            var model =
-                new WorkOrderEdit
+            var model = new WorkOrderEdit
                 {
                     WorkOrderId = detail.WorkOrderId,
                     CarId = detail.CarId,
+                    CustomerId = detail.CustomerId,
                     CarMileage = detail.CarMileage,
                     WorkOrderDetail = detail.WorkOrderDetail,
                     WorkOrderDate = detail.WorkOrderDate

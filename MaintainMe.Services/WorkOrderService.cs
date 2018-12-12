@@ -16,16 +16,17 @@ namespace MaintainMe.Services
         {
             _userId = userId;
         }
-
+        //TODO: CustomerId -> WorkOrderDetail fix
         public bool CreateWorkOrder(WorkOrderCreate model)
         {
             var entity =
                 new WorkOrder()
                 { 
                     OwnerId = _userId,
+                    CustomerId = model.CustomerId,
                     CarId = model.CarId, 
                     CarMileage = model.CarMileage,
-                    WorkOrderDetail = model.WorkOrderDetail,
+                    WorkOrderDetail = model.WorkOrderDetail.ToString(),
                     WorkOrderDate = model.WorkOrderDate
                 };
 
@@ -49,9 +50,10 @@ namespace MaintainMe.Services
                                 new WorkOrderListItem
                                 {
                                     WorkOrderId = e.WorkOrderId,
+                                    CustomerId = e.CustomerId,
                                     CarId = e.CarId,
                                     CarMileage = e.CarMileage,
-                                    WorkOrderDetail = e.WorkOrderDetail,
+                                    WorkOrderDetail = e.WorkOrderDetail.ToString(),
                                     WorkOrderDate = e.WorkOrderDate
                                 }
                         );
@@ -73,6 +75,7 @@ namespace MaintainMe.Services
                     {
                         WorkOrderId = entity.WorkOrderId,
                         CarId = entity.CarId,
+                        CustomerId = entity.CustomerId,
                         CarMileage = entity.CarMileage,
                         WorkOrderDetail = entity.WorkOrderDetail,
                         WorkOrderDate = entity.WorkOrderDate
@@ -91,7 +94,7 @@ namespace MaintainMe.Services
 
                 entity.CarId = model.CarId;
                 entity.CarMileage = model.CarMileage;
-                entity.WorkOrderDetail = model.WorkOrderDetail;
+                entity.WorkOrderDetail = model.WorkOrderDetail.ToString();
                 entity.WorkOrderDate = model.WorkOrderDate;
 
                 return ctx.SaveChanges() == 1;

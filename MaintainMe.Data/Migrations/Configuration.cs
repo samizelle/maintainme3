@@ -10,7 +10,6 @@ namespace MaintainMe.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MaintainMe.Data.ApplicationDbContext";
         }
 
         protected override void Seed(MaintainMe.Data.ApplicationDbContext context)

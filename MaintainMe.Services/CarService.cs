@@ -23,7 +23,7 @@ namespace MaintainMe.Services
                 new Car()
                 {
                     OwnerId = _userId,
-                    CarOwnerId = model.CarOwnerId,
+                    CustomerId = model.CustomerId,
                     CarMake = model.CarMake,
                     CarModel = model.CarModel
                 };
@@ -48,13 +48,28 @@ namespace MaintainMe.Services
                                 new CarListItem
                                 {
                                     CarId = e.CarId,
-                                    CarOwnerId = e.CarOwnerId,
+                                    CustomerId = e.CustomerId,
+                                    //CustomerLastName = e.CarOwner.LastName,
                                     CarMake = e.CarMake,
                                     CarModel = e.CarModel
                                 }
                         );
 
                 return query.ToArray();
+            }
+        }
+
+        /*TODO 1
+            Write a method called GetCarOwnerByCarId that returns the Car Owner Id.
+        */
+
+        public int GetCarOwnerByCarId(int carId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query = ctx.Cars.Single(e => e.CarId == carId);
+
+                return query.CustomerId;
             }
         }
 
@@ -65,12 +80,13 @@ namespace MaintainMe.Services
                 var entity =
                     ctx
                         .Cars
-                        .Single(e => e.CarId == carId && e.OwnerId == _userId);
+                        .Single(e => e.CarId == carId);
                 return
                     new CarDetail
                     {
                         CarId = entity.CarId,
-                        CarOwnerId = entity.CarOwnerId,
+                        CustomerId = entity.CustomerId,
+                        //CustomerLastName = entity.CarOwner.LastName,
                         CarMake = entity.CarMake,
                         CarModel = entity.CarModel
                     };
@@ -79,14 +95,14 @@ namespace MaintainMe.Services
 
         public bool UpdateCar(CarEdit model)
         {
-            using(var ctx = new ApplicationDbContext())
+            using (var ctx = new ApplicationDbContext())
             {
-                var entity = 
+                var entity =
                     ctx
                         .Cars
                         .Single(e => e.CarId == model.CarId && e.OwnerId == _userId);
 
-                entity.CarOwnerId = model.CarOwnerId;
+                entity.CustomerId = model.CustomerId;
                 entity.CarMake = model.CarMake;
                 entity.CarModel = model.CarModel;
 

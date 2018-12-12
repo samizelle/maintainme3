@@ -3,36 +3,23 @@ namespace MaintainMe.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
-            CreateTable(
-                "dbo.CarOwner",
-                c => new
-                    {
-                        CarOwnerId = c.Int(nullable: false, identity: true),
-                        OwnerId = c.Guid(nullable: false),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Address = c.String(),
-                        CityStZip = c.String(),
-                    })
-                .PrimaryKey(t => t.CarOwnerId);
-            
             CreateTable(
                 "dbo.Car",
                 c => new
                     {
                         CarId = c.Int(nullable: false, identity: true),
-                        CarOwnerId = c.Int(nullable: false),
                         OwnerId = c.Guid(nullable: false),
+                        CustomerId = c.Int(nullable: false),
                         CarMake = c.String(nullable: false),
                         CarModel = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.CarId)
-                .ForeignKey("dbo.CarOwner", t => t.CarOwnerId, cascadeDelete: true)
-                .Index(t => t.CarOwnerId);
+                .ForeignKey("dbo.Customer", t => t.CustomerId, cascadeDelete: true)
+                .Index(t => t.CustomerId);
             
             CreateTable(
                 "dbo.WorkOrder",
@@ -41,13 +28,27 @@ namespace MaintainMe.Data.Migrations
                         WorkOrderId = c.Int(nullable: false, identity: true),
                         OwnerId = c.Guid(nullable: false),
                         CarId = c.Int(nullable: false),
+                        CustomerId = c.Int(nullable: false),
                         CarMileage = c.Int(nullable: false),
-                        WorkOrderDetail = c.Int(nullable: false),
+                        WorkOrderDetail = c.String(nullable: false),
                         WorkOrderDate = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.WorkOrderId)
                 .ForeignKey("dbo.Car", t => t.CarId, cascadeDelete: true)
                 .Index(t => t.CarId);
+            
+            CreateTable(
+                "dbo.Customer",
+                c => new
+                    {
+                        CustomerId = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        Address = c.String(),
+                        CityStZip = c.String(),
+                    })
+                .PrimaryKey(t => t.CustomerId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -127,22 +128,22 @@ namespace MaintainMe.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Car", "CustomerId", "dbo.Customer");
             DropForeignKey("dbo.WorkOrder", "CarId", "dbo.Car");
-            DropForeignKey("dbo.Car", "CarOwnerId", "dbo.CarOwner");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.WorkOrder", new[] { "CarId" });
-            DropIndex("dbo.Car", new[] { "CarOwnerId" });
+            DropIndex("dbo.Car", new[] { "CustomerId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Customer");
             DropTable("dbo.WorkOrder");
             DropTable("dbo.Car");
-            DropTable("dbo.CarOwner");
         }
     }
 }

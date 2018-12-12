@@ -8,19 +8,19 @@ using MaintainMe.Models;
 
 namespace MaintainMe.Services
 {
-    public class CarOwnerService
+    public class CustomerService
     {
         private readonly Guid _userId;
 
-        public CarOwnerService(Guid userId)
+        public CustomerService(Guid userId)
         {
             _userId = userId;
         }
 
-        public bool CreateCarOwner(CarOwnerCreate model)
+        public bool CreateCustomer(CustomerCreate model)
         {
             var entity =
-                new CarOwner()
+                new Customer()
                 {
                     OwnerId = _userId,
                     FirstName = model.FirstName,
@@ -31,24 +31,24 @@ namespace MaintainMe.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.CarOwners.Add(entity);
+                ctx.Customers.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<CarOwnerListItem> GetCarOwners()
+        public IEnumerable<CustomerListItem> GetCustomers()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .CarOwners
+                        .Customers
                         .Where(e => e.OwnerId == _userId)
                         .Select(
                             e =>
-                                new CarOwnerListItem
+                                new CustomerListItem
                                 {
-                                    CarOwnerId = e.CarOwnerId,
+                                    CustomerId = e.CustomerId,
                                     FirstName = e.FirstName,
                                     LastName = e.LastName,
                                     Address = e.Address,
@@ -59,37 +59,56 @@ namespace MaintainMe.Services
             }
         }
 
-        public CarOwnerDetail GetCarOwnerById(int carOwnerId)
+        public CustomerDetail GetCustomerById(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .CarOwners
-                        .Single(e => e.CarOwnerId == carOwnerId && e.OwnerId == _userId);
+                        .Customers
+                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
                 return
-                    new CarOwnerDetail
+                    new CustomerDetail
                     {
-                        CarOwnerId = entity.CarOwnerId,
+                        CustomerId = entity.CustomerId,
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
                         Address = entity.Address,
                         CityStZip = entity.CityStZip
                     };
-
             }
         }
 
-        public bool UpdateCarOwner(CarOwnerEdit model)
+        public IEnumerable<CarListItem> GetCustomerCar(int customerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Cars
+                    .Where(e => e.CustomerId == customerId)
+                    .Select(e =>
+                    new CarListItem
+                    {
+                        CarId = e.CarId,
+                        CarModel = e.CarModel,
+                        CarMake = e.CarMake
+                    });
+
+                return query.ToArray();
+            }
+        }
+
+        public bool UpdateCustomer(CustomerEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .CarOwners
-                        .Single(e => e.CarOwnerId == model.CarOwnerId && e.OwnerId == _userId);
+                        .Customers
+                        .Single(e => e.CustomerId == model.CustomerId && e.OwnerId == _userId);
 
-                entity.CarOwnerId = model.CarOwnerId;
+                entity.CustomerId = model.CustomerId;
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.Address = model.Address;
@@ -99,16 +118,16 @@ namespace MaintainMe.Services
             }
         }
 
-        public bool DeleteCarOwner(int carOwnerId)
+        public bool DeleteCustomer(int customerId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .CarOwners
-                        .Single(e => e.CarOwnerId == carOwnerId && e.OwnerId == _userId);
+                        .Customers
+                        .Single(e => e.CustomerId == customerId && e.OwnerId == _userId);
 
-                ctx.CarOwners.Remove(entity);
+                ctx.Customers.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

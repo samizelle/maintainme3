@@ -4,19 +4,22 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaintainMe.Data;
 
 namespace MaintainMe.Models
 {
-    public class CarOwnerEdit
+    public class CustomerCreate
     {
-        public int CarOwnerId { get; set; }
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        [Display(Name = "Address")]
+        [MaxLength(35)]
         public string Address { get; set; }
-        [Display(Name = "City St Zip")]
-        public String CityStZip { get; set; }
+        [MaxLength(35)]
+        [Display(Name = "City St ZipCode")]
+        public string CityStZip { get; set; }
+
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

@@ -55,23 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Car.cs" />
-    <Compile Include="CarOwner.cs" />
+    <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\201812062022518_InitialCreate.cs" />
-    <Compile Include="Migrations\201812062022518_InitialCreate.Designer.cs">
-      <DependentUpon>201812062022518_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812071653194_updateForFullName.cs" />
-    <Compile Include="Migrations\201812071653194_updateForFullName.Designer.cs">
-      <DependentUpon>201812071653194_updateForFullName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812071956345_update.cs" />
-    <Compile Include="Migrations\201812071956345_update.Designer.cs">
-      <DependentUpon>201812071956345_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812072119258_barebones.cs" />
-    <Compile Include="Migrations\201812072119258_barebones.Designer.cs">
-      <DependentUpon>201812072119258_barebones.cs</DependentUpon>
+    <Compile Include="Migrations\201812111944472_initial.cs" />
+    <Compile Include="Migrations\201812111944472_initial.Designer.cs">
+      <DependentUpon>201812111944472_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,17 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201812062022518_InitialCreate.resx">
-      <DependentUpon>201812062022518_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812071653194_updateForFullName.resx">
-      <DependentUpon>201812071653194_updateForFullName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812071956345_update.resx">
-      <DependentUpon>201812071956345_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812072119258_barebones.resx">
-      <DependentUpon>201812072119258_barebones.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201812111944472_initial.resx">
+      <DependentUpon>201812111944472_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

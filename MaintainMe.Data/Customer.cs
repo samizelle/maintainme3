@@ -5,17 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MaintainMe.Models
+namespace MaintainMe.Data
 {
-    public class CarOwnerDetail
+    public class Customer
     {
-        [Display(Name = "Owner ID")]
-        public int CarOwnerId { get; set; }
+        [Key]
+        public int CustomerId { get; set; }
+        public Guid OwnerId { get; set; }
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
-        [Display(Name = "Address")]
         public string Address { get; set; }
-        [Display(Name = "City St ZipCode")]
         public string CityStZip { get; set; }
+
+        public virtual ICollection<Car> Cars { get; set; }
     }
 }

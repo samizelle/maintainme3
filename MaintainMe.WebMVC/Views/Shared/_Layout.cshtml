@@ -3,43 +3,53 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - MaintainMe!</title>
+    <title>@ViewBag.Title - Customer Maintenance</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-success">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("MaintainMe!", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            @Html.ActionLink("Customer Maintenance", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" >@Html.ActionLink("Home", "Index", "Home")<span class="sr-only">(current)</span></a>
+                    </li>
+
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Car Owner", "Index", "CarOwner")</li>
-                        <li>@Html.ActionLink("Car", "Index", "Car")</li>
-                        <li>@Html.ActionLink("WorkOrder", "Index", "WorkOrder")</li>
+                        <li class="nav-item">
+                            <a class="nav-link" >@Html.ActionLink("Customers", "Index", "Customer")</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >@Html.ActionLink("Vehicles", "Index", "Car")</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >@Html.ActionLink("WorkOrders", "Index", "WorkOrder")</a>
+                        </li>
                     }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="nav-item">
+                        <a class="nav-link" >@Html.ActionLink("About", "About", "Home")</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >@Html.ActionLink("Contact", "Contact", "Home")</a>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - MaintainMe!</p>
+        <footer class="text-center">
+            <p>&copy; @DateTime.Now.Year - Customer Maintenance</p>
         </footer>
     </div>
 

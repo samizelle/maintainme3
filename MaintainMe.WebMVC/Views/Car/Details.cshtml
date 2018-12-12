@@ -18,12 +18,13 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.CarOwnerId)
+            @Html.DisplayNameFor(model => model.CustomerId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CarOwnerId)
+            @Html.DisplayFor(model => model.CustomerId)
         </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.CarMake)
         </dt>
@@ -44,6 +45,6 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CarId }) |
-    @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = Model.CarId }, null) |
+    @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = Model.CarId , Model.CustomerId}, null) |
     @Html.ActionLink("Back to List", "Index")
 </p>

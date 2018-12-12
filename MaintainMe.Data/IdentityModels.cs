@@ -32,7 +32,7 @@ namespace MaintainMe.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<CarOwner> CarOwners { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<WorkOrder> WorkOrders { get; set; }
 
