@@ -24,6 +24,7 @@ namespace MaintainMe.WebMVC
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/bootswatch-litera.css",
                       "~/Content/site.css"));
         }
     }
