@@ -19,26 +19,32 @@
             <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" >@Html.ActionLink("Home", "Index", "Home")<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
                     </li>
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li class="nav-item">
-                            <a class="nav-link" >@Html.ActionLink("Customers", "Index", "Customer")</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" >@Html.ActionLink("Vehicles", "Index", "Car")</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" >@Html.ActionLink("WorkOrders", "Index", "WorkOrder")</a>
-                        </li>
-                    }
                     <li class="nav-item">
-                        <a class="nav-link" >@Html.ActionLink("About", "About", "Home")</a>
+                        @*<a class="nav-link">@Html.ActionLink("Customers", "Index", "Customer")</a>*@
+                        <a class="nav-link" href="@Url.Action("Index", "Customer")">Customers</a>
+
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" >@Html.ActionLink("Contact", "Contact", "Home")</a>
+                        @*<a class="nav-link">@Html.ActionLink("Vehicles", "Index", "Car")</a>*@
+                        <a class="nav-link" href="@Url.Action("Index", "Car")">Vehicles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "WorkOrder")">WorkOrders</a>
+                        @*<a class="nav-link">@Html.ActionLink("WorkOrders", "Index", "WorkOrder")</a>*@
+                    </li>
+                    }
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                            @*<a class="nav-link">@Html.ActionLink("About", "About", "Home")</a>*@
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
+                        @*<a class="nav-link">@Html.ActionLink("Contact", "Contact", "Home")</a>*@
                     </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
