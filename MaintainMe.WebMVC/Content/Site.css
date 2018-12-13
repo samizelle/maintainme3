@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
 
@@ -23,20 +23,26 @@ textarea {
     max-width: 280px;
 }
 
-a.navbar-brand {
-    padding: 10px;
-    font-size: 3px;
+.container-navbar {
+    /*padding: 10px;*/
+    font-size: 10rem !important;
+    color: white;
 }
 
-li.nav-item {
+a.navbar-brand {
     padding: 10px;
-    font-size: 12rem;
+    font-size: 1.0rem;
+}
+
+li.nav-item nav-link {
+    padding: 10px;
+    font-size: 10rem !important;
     color: white;
 }
 
 .nav-link {
     padding: 10px;
-    font-size: 5rem;
+    font-size: 2rem;
     color: white;
 }
 
@@ -46,6 +52,7 @@ li.nav-item {
 
 h1 {
     font-size: 1.5rem;
+    color: white;
 }
 
 table, .table {
@@ -53,7 +60,7 @@ table, .table {
 }
 
 h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
 }
 
@@ -67,6 +74,6 @@ p {
 
 ul.nav navbar-nav navbar-right {
     padding: 10px;
-    font-size: 5rem;
+    font-size: 55rem;
     color: white;
 }
