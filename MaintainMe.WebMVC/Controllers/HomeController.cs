@@ -15,7 +15,7 @@ namespace MaintainMe.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "About MaintainMe";
+            ViewBag.Message = "About Jack's";
 
             return View();
         }
