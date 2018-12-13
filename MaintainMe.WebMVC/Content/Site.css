@@ -30,8 +30,8 @@ textarea {
 }
 
 a.navbar-brand {
-    padding: 10px;
-    font-size: 1.0rem;
+    padding-bottom: 10px;
+    font-size: 2.0rem;
 }
 
 li.nav-item nav-link {
@@ -47,7 +47,8 @@ li.nav-item nav-link {
 }
 
 .navbar-right {
-    color: aliceblue;
+    color: white;
+    font-size: 1.6rem;
 }
 
 h1 {
@@ -70,10 +71,27 @@ h3 {
 
 p {
     font-family: inherit;
+    font-size: 1.1rem;
 }
 
 ul.nav navbar-nav navbar-right {
     padding: 10px;
     font-size: 55rem;
     color: white;
+}
+
+.jumbotron {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+.jumbotron h1 {
+    font-size: 48px;
+}
+
+.col-md-6 h2 {
+    font-size: 1.8rem;
+}
+
+.col-md-6 p {
+    font-size: 1.5rem;
 }
