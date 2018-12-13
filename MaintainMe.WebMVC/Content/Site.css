@@ -57,7 +57,7 @@ h1 {
 }
 
 table, .table {
-    font-size: 1rem;
+    font-size: 1.4rem;
 }
 
 h2 {
@@ -94,4 +94,12 @@ ul.nav navbar-nav navbar-right {
 
 .col-md-6 p {
     font-size: 1.5rem;
+}
+
+h2.container body-content {
+    font-size: 1.4rem;
+}
+
+container body-content p{
+    font-size: 1.2rem;
 }
