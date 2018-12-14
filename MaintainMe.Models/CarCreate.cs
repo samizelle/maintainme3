@@ -13,6 +13,7 @@ namespace MaintainMe.Models
         [Required]
         [Display(Name = "Customer ID")]
         public int CustomerId { get; set; }
+        public string LastName { get; set; }
         [Required]
         [Display(Name = "Car Make")]
         [MinLength(2, ErrorMessage ="Please enter at least two characters")]
@@ -24,6 +25,7 @@ namespace MaintainMe.Models
         [MaxLength(25, ErrorMessage = "Model can be no longer than 25 characters")]
         public string CarModel { get; set; }
 
+        public virtual Customer Customers { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
 
     }

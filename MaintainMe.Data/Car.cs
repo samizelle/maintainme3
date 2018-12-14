@@ -18,7 +18,7 @@ namespace MaintainMe.Data
         [Required]
         public string CarModel { get; set; }
 
-        public virtual Customer Customers  { get; set; }
+        public virtual Customer Customer  { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
 
     }
