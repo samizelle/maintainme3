@@ -49,7 +49,7 @@ namespace MaintainMe.Services
                                 {
                                     CarId = e.CarId,
                                     CustomerId = e.CustomerId,
-                                    //CustomerLastName = e.CarOwner.LastName,
+                                    CustomerLastName = e.Customers.LastName,
                                     CarMake = e.CarMake,
                                     CarModel = e.CarModel
                                 }
@@ -86,7 +86,7 @@ namespace MaintainMe.Services
                     {
                         CarId = entity.CarId,
                         CustomerId = entity.CustomerId,
-                        //CustomerLastName = entity.CarOwner.LastName,
+                        CustomerLastName = entity.Customers.LastName,
                         CarMake = entity.CarMake,
                         CarModel = entity.CarModel
                     };

@@ -15,5 +15,6 @@ namespace MaintainMe.Models
         public string CarMake { get; set; }
         public string CarModel { get; set; }
 
+        public virtual Customer Customers { get; set; }
     }
 }

@@ -13,7 +13,7 @@
             @Html.DisplayNameFor(model => model.CarId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerId)
+            @Html.DisplayNameFor(model => model.Customers.LastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CarMake)
@@ -41,6 +41,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.CarId, item.CustomerId }) |
             @Html.ActionLink("Details", "Details", new { id = item.CarId, item.CustomerId }) |
+            @Html.ActionLink("Add a New WorkOrder", "Create", "WorkOrder", new { id = item.CarId, item.CustomerId }, null) |
             @Html.ActionLink("Delete", "Delete", new { id = item.CarId, item.CustomerId })
         </td>
     </tr>
