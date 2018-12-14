@@ -12,8 +12,9 @@ namespace MaintainMe.Models
     {
         [Display(Name = "Customer ID")]
         public int CustomerId { get; set; }
-        [Display(Name = "Name")]
+        [Display(Name = "First Name")]
         public string FirstName { get; set; }
+        [Display(Name = "Last Name")]
         public string LastName { get; set; }
         public string Address { get; set; }
         [Display(Name = "City St ZipCode")]

@@ -38,6 +38,5 @@ namespace MaintainMe.Data
         public DateTime WorkOrderDate { get; set; }
 
         public virtual Car Car { get; set; }
-
     }
 }
