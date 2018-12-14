@@ -18,7 +18,8 @@ namespace MaintainMe.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CarService(userId);
             var model = service.GetCars();
-
+            var customerService = CreateCustomerService();
+            ViewBag.CustomerId = new SelectList(customerService.GetCustomers(), "CustomerId", "LastName");
             return View(model);
         }
 
@@ -134,6 +135,13 @@ namespace MaintainMe.WebMVC.Controllers
             /*var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CarService(userId);
             return service;*/
+        }
+
+        private CustomerService CreateCustomerService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new CustomerService(userId);
+            return service;
         }
     }
 }

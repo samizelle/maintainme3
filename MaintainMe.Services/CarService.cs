@@ -124,5 +124,19 @@ namespace MaintainMe.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public string GetCustomerName (int id)
+        {
+            string customerName;
+            using (var ctx = new ApplicationDbContext())
+            {
+                var customer =
+                    ctx.
+                    Customers.Single(c => c.CustomerId == id);
+
+                customerName = customer.LastName;
+            }
+            return customerName;
+        }
     }
 }
