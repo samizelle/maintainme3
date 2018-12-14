@@ -25,7 +25,7 @@ namespace MaintainMe.Models
         [MaxLength(25, ErrorMessage = "Model can be no longer than 25 characters")]
         public string CarModel { get; set; }
 
-        public virtual Customer Customers { get; set; }
+        public virtual Customer Customer { get; set; }
         public virtual ICollection<WorkOrder> WorkOrders { get; set; }
 
     }

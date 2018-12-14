@@ -52,6 +52,7 @@ namespace MaintainMe.Services
                                     WorkOrderId = e.WorkOrderId,
                                     CustomerId = e.CustomerId,
                                     CarId = e.CarId,
+                                    CustomerLastName = e.Car.Customer.LastName,
                                     CarMileage = e.CarMileage,
                                     WorkOrderDetail = e.WorkOrderDetail.ToString(),
                                     WorkOrderDate = e.WorkOrderDate
@@ -76,6 +77,7 @@ namespace MaintainMe.Services
                         WorkOrderId = entity.WorkOrderId,
                         CarId = entity.CarId,
                         CustomerId = entity.CustomerId,
+                        CustomerLastName = entity.Car.Customer.LastName,
                         CarMileage = entity.CarMileage,
                         WorkOrderDetail = entity.WorkOrderDetail,
                         WorkOrderDate = entity.WorkOrderDate

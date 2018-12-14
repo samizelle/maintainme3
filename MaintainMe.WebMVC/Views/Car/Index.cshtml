@@ -5,15 +5,12 @@
 }
 
 <h2>Vehicle List</h2>
-<h3>Vehicles must be added through the Customer Details page</h3>
+<h3>Vehicles must be added through the Customer index</h3>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CarId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Customers.LastName)
+            @Html.DisplayNameFor(model => model.Customer.LastName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CarMake)
@@ -27,10 +24,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CarId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customers.LastName)
+            @Html.DisplayFor(modelItem => item.CustomerLastName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CarMake)

@@ -20,7 +20,7 @@ namespace MaintainMe.Models
         public int CarMileage { get; set; }
 
         public int CustomerId { get; set; }
-        //public string CustomerLastName { get; set; }
+        public string CustomerLastName { get; set; }
 
         public string WorkOrderDetail { get; set; }
 
