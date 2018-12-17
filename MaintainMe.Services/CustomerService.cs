@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaintainMe.Contracts;
 using MaintainMe.Data;
 using MaintainMe.Models;
 
 namespace MaintainMe.Services
-{
-    public class CustomerService
+{ 
+    public class CustomerService : ICustomerService
     {
         private readonly Guid _userId;
 
@@ -79,27 +80,7 @@ namespace MaintainMe.Services
             }
         }
 
-        public IEnumerable<CarListItem> GetCustomerCar(int customerId)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                    .Cars
-                    .Where(e => e.CustomerId == customerId)
-                    .Select(e =>
-                    new CarListItem
-                    {
-                        CarId = e.CarId,
-                        CarModel = e.CarModel,
-                        CarMake = e.CarMake
-                    });
-
-                return query.ToArray();
-            }
-        }
-
-        public bool UpdateCustomer(CustomerEdit model)
+       public bool UpdateCustomer(CustomerEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {

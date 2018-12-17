@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaintainMe.Contracts;
 using MaintainMe.Data;
 using MaintainMe.Models;
 
 namespace MaintainMe.Services
 {
-    public class CarService
+    public class CarService : ICarService
     {
         private readonly Guid _userId;
 
@@ -70,6 +71,57 @@ namespace MaintainMe.Services
                 var query = ctx.Cars.Single(e => e.CarId == carId);
 
                 return query.CustomerId;
+            }
+        }
+
+        /*public IEnumerable<ListDetailItem> GetCarsByCustomerId()
+        {
+            List<ListDetailItem> listDetailItem = new List<ListDetailItem>();
+            List<int> CustomerId = new List<int>();
+            using (var ctx = new ApplicationDbContext())
+            {
+                foreach (var car in ctx.Cars)
+                {
+                    if (!CustomerId.Contains(car.CustomerId))
+                    {
+                        CustomerId.Add(car.CustomerId);
+                    }
+                }
+
+                foreach (var id in CustomerId)
+                {
+                    var query = ctx
+                        .Customers
+                        .Single(e => e.CustomerId == id);
+                    listDetailItem.Add(new ListDetailItem
+                    {
+                        CustomerId = id,
+                        car = GetCustomerCarsById(id).ToArray()
+                    });
+
+                    return ListDetailItem;
+                }
+            }
+        }*/
+        
+        public IEnumerable<CustomerCarListItem> GetCustomerCarsById(int customerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Cars
+                    .Where(e => e.CustomerId == customerId)
+                    .Select(e =>
+                    new CustomerCarListItem
+                    {
+                        CustomerId = e.CustomerId,
+                        CarId = e.CarId,
+                        CarMake = e.CarMake,
+                        CarModel = e.CarModel
+                    });
+
+                return query.ToArray();
             }
         }
 

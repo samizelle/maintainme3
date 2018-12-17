@@ -64,6 +64,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MaintainMe.Contracts\MaintainMe.Contracts.csproj">
+      <Project>{7D43FAE7-B52F-46FD-85B3-048C1FB91805}</Project>
+      <Name>MaintainMe.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MaintainMe.Data\MaintainMe.Data.csproj">
       <Project>{571753b0-2acd-44d0-81d8-65af06187969}</Project>
       <Name>MaintainMe.Data</Name>

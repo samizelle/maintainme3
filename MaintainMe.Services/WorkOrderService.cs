@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MaintainMe.Contracts;
 using MaintainMe.Data;
 using MaintainMe.Models;
 
 namespace MaintainMe.Services
 {
-    public class WorkOrderService
+    public class WorkOrderService : IWorkOrderService
     {
         private readonly Guid _userId;
 

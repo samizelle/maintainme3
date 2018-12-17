@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace MaintainMe.Models
 {
-    public class CustomerCarListItem
+    public class ListDetailItem
     {
         public int CustomerId { get; set; }
-        public int CarId { get; set; }
-        public string CarMake { get; set; }
-        public string CarModel { get; set; }
+        //public string CarMake { get; set; }
+        //public string CarModel { get; set; }
+
+        public List<CustomerCarListItem> car { get; set; }
     }
 }

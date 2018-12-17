@@ -58,13 +58,13 @@ namespace MaintainMe.WebMVC.Controllers
         }
 
         // Car Detail by Customer
-        public ActionResult CustomerCarIndex(int customerId)
+        /*public ActionResult CustomerCarIndex(int customerId)
         {
             var svc = CreateCustomerService();
             var model = svc.GetCustomerCar(customerId);
 
             return View(model);
-        }
+        }*/
 
         // GET Customer Edit
         public ActionResult Edit(int id)
