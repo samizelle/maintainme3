@@ -209,6 +209,11 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Assets\background-concrete.jpg" />
+    <Content Include="Content\Assets\pexels-car-engine.jpeg" />
+    <Content Include="Content\Assets\pexels-car-keys.jpeg" />
+    <Content Include="Content\Assets\pexels-photo-279949.jpeg" />
+    <Content Include="Content\Assets\pexels-photo-849835.jpeg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -287,7 +292,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Assets\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
