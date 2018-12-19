@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintainMe.Tests", "Maintai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkOrder.Utilities", "WorkOrder.Utilities\WorkOrder.Utilities.csproj", "{95C5FB96-D00E-45C0-801F-1696CC9B65CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaintainMe.WebAPI", "MaintainMe.WebAPI\MaintainMe.WebAPI.csproj", "{3B090DD9-18CB-4E80-B08D-1EE6D71A16BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{95C5FB96-D00E-45C0-801F-1696CC9B65CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95C5FB96-D00E-45C0-801F-1696CC9B65CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95C5FB96-D00E-45C0-801F-1696CC9B65CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B090DD9-18CB-4E80-B08D-1EE6D71A16BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B090DD9-18CB-4E80-B08D-1EE6D71A16BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B090DD9-18CB-4E80-B08D-1EE6D71A16BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B090DD9-18CB-4E80-B08D-1EE6D71A16BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
