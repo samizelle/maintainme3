@@ -24,7 +24,7 @@ namespace MaintainMe.WebAPI.Controllers
         {
             CustomerService customerService = CreateCustomerService();
             var customer = customerService.GetCustomerById(id);
-            return Ok();
+            return Ok(customer);
         }
 
         public IHttpActionResult Post(CustomerCreate customer)
@@ -59,7 +59,7 @@ namespace MaintainMe.WebAPI.Controllers
             var service = CreateCustomerService();
 
             if (!service.DeleteCustomer(id))
-                return InternalServerError()
+                return InternalServerError();
 
             return Ok();
         }
